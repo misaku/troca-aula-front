@@ -1,6 +1,14 @@
 'use client'
 import styled, {css} from 'styled-components'
-
+import Logo from "@/app/components/Logo";
+import {useForm} from "react-hook-form";
+import * as Yup from "yup";
+import {yupResolver} from "@hookform/resolvers/yup"
+import sha1 from 'crypto-js/sha1';
+import Base64 from 'crypto-js/enc-base64';
+import {useApi} from "@/api.service";
+import { redirect } from 'next/navigation'
+import {toast} from "react-toastify";
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
@@ -8,7 +16,7 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    
+
 `
 const Content = styled.div`
     display: flex;
@@ -20,6 +28,13 @@ const Content = styled.div`
     align-items: center;
     justify-content: center;
     padding: 20px;
+    label{
+        width: 100%;
+    }
+    p {
+        color: #993535;
+        text-transform: uppercase;
+    }
 
     dt {
         margin-top: 20px;
@@ -68,6 +83,7 @@ const Content = styled.div`
         cursor: pointer;
         background-color: #fff;
         transition: background-color 0.2s;
+
         &:hover {
             background-color: #daf3f3;
         }
@@ -76,6 +92,7 @@ const Content = styled.div`
             background: transparent;
             height: auto;
             color: #fff;
+
             &:hover {
                 text-decoration: underline;
             }
@@ -90,92 +107,50 @@ const Card = styled.div`
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
-    ${Content}{
-        &:nth-child(2){
+
+    ${Content} {
+        &:nth-child(2) {
             background-color: #509BA1;
             max-width: 400px;
         }
     }
 `
+const validationSchema = Yup.object({
+    name: Yup.string().required('Nome é obrigatório'),
+    email: Yup.string().required('E-mail é obrigatório'),
+    phone: Yup.string().required('Telefone é obrigatório'),
+    password: Yup.string().required('Senha é obrigatório'),
+    confirmpPass: Yup.string()
+        .oneOf([Yup.ref('password'), null], 'As senhas não conferem')
+});
 
-
-interface SetaProps {
-    inverte?: boolean;
-}
-
-const Seta = styled.div<SetaProps>`
-    width: 100%;
-    height: 3px;
-    background-color: #636363;
-    position: absolute;
-    bottom: 10px;
-
-    &:after {
-        content: '';
-        display: block;
-        width: 10px;
-        height: 10px;
-        border-top: 3px solid #636363;
-        border-right: 3px solid #636363;
-        transform: rotate(45deg);
-        position: absolute;
-        top: -5px;
-        right: 0;
-    }
-
-    ${({inverte}) => inverte && css`
-        background-color: #509BA1;
-        bottom: auto;
-        top: 10px;
-
-        &:after {
-            content: '';
-            display: block;
-            width: 10px;
-            height: 10px;
-            border-top: 3px solid #509BA1;
-            border-right: 3px solid #509BA1;
-            transform: rotate(225deg);
-            position: absolute;
-            top: -5px;
-            left: 0;
-        }
-    `}
-`
-const Logo = styled.div`
-    display: flex;
-    gap: 8px;
-    transform: scale(0.7); /* Reduz para 80% do tamanho original */
-    transform-origin: center center; /* Define o ponto de origem da transformação */
-    h1 {
-        color: #509BA1;
-        padding: 20px 0;
-        position: relative;
-        font-size: 30px;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        &:nth-child(1) {
-
-        }
-
-        &:nth-child(2) {
-            color: #636363;
-        }
-    }
-`
 export default function Home() {
+    const {register, handleSubmit, formState} = useForm({
+        resolver: yupResolver(validationSchema)
+    });
+    const {api} = useApi();
+    const submidt = handleSubmit(async (data) => {
+
+        const payload = {
+            password: Base64.stringify(sha1(data.password)),
+            profileId: 3,
+            schoolId: 1,
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+        }
+        const response = await api.post('/users', payload);
+        if(response.status === 201){
+            toast.success('Usuário cadastrado com sucesso')
+        }
+        redirect('/')
+    })
+
     return (
         <Wrapper>
             <Card>
                 <Content>
-                    <Logo>
-                        <h1>
-                            Troca
-                            <Seta/>
-                        </h1>
-                        <h1><Seta inverte={true}/>
-                            Aula</h1>
-                    </Logo>
+                    <Logo size={70}/>
                     <dl>
                         <dt>🌟 Bem-vindo ao Troca Aula!</dt>
                         <dd>Em um mundo onde a educação é a chave para o progresso, cada aula conta. Pensando nisso,
@@ -200,10 +175,27 @@ export default function Home() {
                     </dl>
                 </Content>
                 <Content>
-                    <input placeholder={'e-mail'} type={'email'}/>
-                    <input placeholder={'senha'} type={'password'}/>
-                    <button>Entrar</button>
-                    <button className={'clear'}>Cadastrar</button>
+                    <label>
+                        <input {...register("name")} placeholder={'nome'} type={'text'}/>
+                        {formState.errors?.name && (<p>{formState.errors.name.message}</p>)}
+                    </label>
+                    <label>
+                        <input {...register("email")} placeholder={'e-mail'} type={'email'}/>
+                        {formState.errors?.email && (<p>{formState.errors.email.message}</p>)}
+                    </label>
+                    <label>
+                        <input {...register("phone")} placeholder={'telefone'} type={'phone'}/>
+                        {formState.errors?.phone && (<p>{formState.errors.phone.message}</p>)}
+                    </label>
+                    <label>
+                        <input {...register("password")} placeholder={'senha'} type={'password'}/>
+                        {formState.errors?.password && (<p>{formState.errors.password.message}</p>)}
+                    </label>
+                    <label>
+                        <input {...register("confirmpPass")} placeholder={'confirme a senha'} type={'password'}/>
+                        {formState.errors?.confirmpPass && (<p>{formState.errors.confirmpPass.message}</p>)}
+                    </label>
+                    <button type={'button'} onClick={submidt}>Cadastrar</button>
                 </Content>
             </Card>
 

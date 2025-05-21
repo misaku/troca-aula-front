@@ -2,10 +2,15 @@
 import styled from 'styled-components'
 import Logo from "@/app/components/Logo";
 import {useForm} from "react-hook-form";
-import {useEffect, useState} from "react";
-import axios from "axios";
-import { format } from "date-fns";
+import {useCallback, useEffect, useMemo, useState} from "react";
+import {format} from "date-fns";
 import * as Yup from 'yup';
+import api from "@/api.service";
+import {yupResolver} from "@hookform/resolvers/yup";
+import {toast} from "react-toastify";
+import {userHook} from "@/user/user.hook";
+import axios from "axios";
+
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
@@ -72,9 +77,11 @@ const Content = styled.div`
             margin-right: 5px;
             border-radius: 3px;
             color: #fff;
-            &:hover{
+
+            &:hover {
                 background-color: #6EC3C9;
             }
+
             &:last-child {
                 margin-right: 0;
             }
@@ -99,15 +106,18 @@ const CardContent = styled.div`
     background-color: #fff;
     gap: 16px;
     border-top-right-radius: 10px;
+
     button {
         transition: all .3s;
     }
+
     header {
         display: flex;
         gap: 16px;
 
 
     }
+
     padding: 20px;
 `
 const Header = styled.header`
@@ -116,6 +126,23 @@ const Header = styled.header`
     width: 100vw;
     height: 60px;
     align-items: center;
+    justify-content: space-between;
+
+    .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        padding-right: 20px;
+
+        button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            color: #f00;
+        }
+    }
+
 
 `
 const Search = styled.div`
@@ -140,7 +167,8 @@ const Search = styled.div`
         color: #ffffff;
         text-transform: uppercase;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             background-color: #6EC3C9;
         }
     }
@@ -148,6 +176,12 @@ const Search = styled.div`
 const Form = styled.form`
     display: flex;
     gap: 16px;
+
+    p {
+        margin: 2px auto;
+        color: #f00;
+    }
+
     input, select {
         height: 40px;
         background-color: #f4f4f4;
@@ -156,11 +190,13 @@ const Form = styled.form`
         border-radius: 5px;
         padding: 5px 20px;
     }
+
     select {
         position: relative;
         display: grid;
         border-right: 10px solid #f4f4f4;
     }
+
     & > button {
         cursor: pointer;
         padding: 5px 20px;
@@ -210,46 +246,149 @@ const Divider = styled.div`
 `
 
 
+const validationSchema = Yup.object({
+    subject: Yup.number().min(1, 'Materia é obrigatório').required('Materia é obrigatório'),
+    startAt: Yup.string().required('Inicio é obrigatório'),
+    finishedAt: Yup.string().required('Termino é obrigatório'),
+});
 
 export default function Home() {
-    const { register, handleSubmit } = useForm();
-    const [classes,setClasses] = useState([])
-    useEffect(() => {
-        axios.get('http://localhost:5000/classes').then( (data)=> {
+    const [classes, setClasses] = useState([])
+    const [school, setSchool] = useState()
+    const [subjects, setSubjects] = useState([])
+    const [preSearch, setPreSearch] = useState('')
+    const [search, setSerch] = useState('')
+    const [all, setAll] = useState<boolean>(true)
+
+    const {register, handleSubmit, formState} = useForm({
+        resolver: yupResolver(validationSchema),
+    });
+
+    const {user, logout, refreshUserData} = userHook();
+
+    const loadClasses = useCallback(() => {
+        axios.get(`/api/classes`, {
+            withCredentials: true,
+            params: {
+                userId: user?.id,
+            }
+        }).then((data) => {
             setClasses(data.data)
         })
+    }, [user])
+
+    const submit = handleSubmit(async (data) => {
+            console.log(data)
+            const {finishedAt, startAt, subject} = data;
+            const payload = {
+                schoolId: school?.id,
+                subjectId: subject,
+                createdByd: user?.id,
+                statededAt: startAt,
+                finishedAt: finishedAt
+            }
+            try {
+                await api.post('/classes', payload);
+                toast.success('Aula cadastrada com sucesso')
+                loadClasses()
+            } catch (error) {
+                toast.error('Erro ao cadastrar aula')
+            }
+        }
+    );
+
+    useEffect(() => {
+        if (!user) refreshUserData();
+    }, [user]);
+
+    useEffect(() => {
+        loadClasses();
+    }, [loadClasses]);
+    useEffect(() => {
+        api.get('/schools/1').then((data) => {
+            setSchool(data.data)
+        })
+        api.get('/subjects').then((data) => {
+            setSubjects(data.data)
+        })
     }, []);
+
+
+    const classesFiltered = useMemo(() => {
+        if (all) {
+            return classes.filter(item => item?.registredById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        }
+        if (user?.profileId === 3) return classes.filter(item => item?.registredById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+
+        return classes.filter(item => item?.registredById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        ;
+    }, [all, classes, search, user])
     return (<>
             <Header>
                 <Logo size={60}/>
+                <div className={'profile'}>
+                    <p>
+                        Olá, {user?.name}
+                    </p>
+                    <button onClick={logout}>Sair</button>
+                </div>
             </Header>
             <Wrapper>
                 <Container>
                     <Card>
+
                         <TabHeader>
-    <button className={'active'}>Aulas Disponiveis</button><button>Minhas Aulas</button>
+                            <button className={all ? 'active' : 'false'} onClick={() => setAll(true)}>Aulas
+                                Disponiveis
+                            </button>
+                            <button className={!all ? 'active' : 'false'} onClick={() => setAll(false)}>Minhas Aulas
+                            </button>
                         </TabHeader>
                         <CardContent>
-                            <Form>
-                                <input
-                                    {...register("school")}
-                                    value={"Otoniel Mota"} disabled={true} type={'text'}/>
-                                <select
-                                    {...register("subject")}
-                                >
-                                    <option>Materia</option>
-                                </select>
-                                <input
-                                    {...register("startAt")}
-                                    placeholder={'Inicio'} type={'datetime-local'}/>
+                            {all && (
+                                <>
+                                    <Form onSubmit={submit}>
+                                        <input
+                                            value={school?.name?? 'Nome da Escola'} disabled={true} type={'text'}/>
+                                        <label>
+                                            <select
+                                                {...register("subject")}
+                                            >
+                                                <option value={-1}>Materia</option>
+                                                {subjects?.map((item, index) => (
+                                                    <option key={`item-${item?.id}`}
+                                                            value={item.id}>{item?.name}</option>
+                                                ))}
+                                            </select>
+                                            {formState.errors?.subject && (<p>{formState.errors.subject.message}</p>)}
+                                        </label>
+                                        <label>
+                                            <input
+                                                {...register("startAt")}
+                                                placeholder={'Inicio'} type={'datetime-local'}/>
+                                            {formState.errors?.startAt && (<p>{formState.errors.startAt.message}</p>)}
+                                        </label>
+                                        <label>
+                                            <input
+                                                {...register("finishedAt")}
+                                                placeholder={'Termino'} type={'datetime-local'}/>
+                                            {formState.errors?.finishedAt && (
+                                                <p>{formState.errors.finishedAt.message}</p>)}
+                                        </label>
 
-                                <button>Cadastrar</button>
-                            </Form>
-                            <Divider />
+
+                                        <button>Cadastrar</button>
+                                    </Form>
+                                    <Divider/>
+                                </>
+                            )}
+
+
                             <header>
                                 <Search>
-                                    <input placeholder={'Pesquisar'} type={'text'}/>
-                                    <button>Buscar</button>
+                                    <input placeholder={'Pesquisar'} value={preSearch} type={'text'}
+                                           onChange={(e) => setPreSearch(e.target.value)}/>
+                                    <button type={'button'} onClick={() => setSerch(preSearch)}>Buscar</button>
                                 </Search>
                             </header>
 
@@ -259,16 +398,18 @@ export default function Home() {
                                     <tr>
                                         <th>Materia</th>
                                         <th>Escola</th>
-                                        <th>Data Hora</th>
+                                        <th>Inicio</th>
+                                        <th>Termino</th>
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {classes.map((item, index) => (
+                                    {classesFiltered.map((item, index) => (
                                         <tr key={`item-${item?.id}`}>
                                             <td>{item?.subject?.name}</td>
                                             <td>{item?.school?.name}</td>
-                                            <td>{format(new Date(item?.createdAt), 'dd/MM/yyyy HH:mm:ss')}</td>
+                                            <td>{format(new Date(item?.statededAt), 'dd/MM/yyyy HH:mm:ss')}</td>
+                                            <td>{format(new Date(item?.finishedAt), 'dd/MM/yyyy HH:mm:ss')}</td>
                                             <td>
                                                 <button>aceitar</button>
                                             </td>

@@ -1,14 +1,15 @@
 'use client'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import Logo from "@/app/components/Logo";
 import {useForm} from "react-hook-form";
 import * as Yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup"
 import sha1 from 'crypto-js/sha1';
 import Base64 from 'crypto-js/enc-base64';
-import {useApi} from "@/api.service";
-import { redirect } from 'next/navigation'
+import {redirect} from 'next/navigation'
 import {toast} from "react-toastify";
+import api from "@/api.service";
+
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
@@ -28,9 +29,11 @@ const Content = styled.div`
     align-items: center;
     justify-content: center;
     padding: 20px;
-    label{
+
+    label {
         width: 100%;
     }
+
     p {
         color: #993535;
         text-transform: uppercase;
@@ -128,7 +131,7 @@ export default function Home() {
     const {register, handleSubmit, formState} = useForm({
         resolver: yupResolver(validationSchema)
     });
-    const {api} = useApi();
+
     const submidt = handleSubmit(async (data) => {
 
         const payload = {
@@ -139,11 +142,13 @@ export default function Home() {
             email: data.email,
             phone: data.phone,
         }
-        const response = await api.post('/users', payload);
-        if(response.status === 201){
+        try {
+            await api.post('/users', payload);
             toast.success('Usuário cadastrado com sucesso')
-        }
-        redirect('/')
+            redirect('/')
+        } catch (_) {}
+
+
     })
 
     return (

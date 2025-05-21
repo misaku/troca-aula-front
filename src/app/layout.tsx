@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from '../lib/registry'
 import {ToastContainer} from "react-toastify";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-      <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
-      <ToastContainer />
+
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+          <ToastContainer />
+
       </body>
     </html>
   );

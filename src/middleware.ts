@@ -1,10 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { parse } from 'cookie';
 
-export function middleware2(req: NextRequest) {
+export function middleware(req: NextRequest) {
     const { pathname } = req.nextUrl;
 
-    const publicPaths = ['/', '/cadastro', '/api/login', '/api/auth/me', '/api/auth/logout'];
+    const publicPaths = ['/', '/cadastro', '/api/login', '/api/auth/me', '/api/auth/logout', '/api/classes'];
 
     if (publicPaths.includes(pathname)) {
         return NextResponse.next();
@@ -22,6 +22,6 @@ export function middleware2(req: NextRequest) {
 
 export const config = {
     matcher: [
-        '/((?!_next/static|_next/image|favicon.ico|images|api/public).*)',
+        '/((?!_next/static|_next/image|favicon.ico|images|api|api/.*).*)',
     ],
 };

@@ -1,26 +1,14 @@
+'use client'
 import {useState, useEffect} from 'react';
-import Base64 from 'crypto-js/enc-base64';
-import {enc}from 'crypto-js';
-export interface UserData{
+import {UserData} from "@/user/user.types";
+import {useRouter} from "next/navigation";
 
-}
 
-export function useUser() {
+export function userHook() {
     const [userData, setUserData] = useState<UserData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const router = useRouter();
 
-    const decodeToken = (token: string) => {
-        try {
-            // JWT tokens são divididos em 3 partes por pontos
-            const [, payloadBase64] = token.split('.');
-            // Decodifica a parte do payload do JWT
-            const decodedPayload = Base64.parse(payloadBase64).toString(enc.Utf8);
-            return JSON.parse(decodedPayload);
-        } catch (error) {
-            console.error('Erro ao decodificar token:', error);
-            return null;
-        }
-    };
 
     const fetchUserData = async () => {
         try {
@@ -28,7 +16,6 @@ export function useUser() {
             const response = await fetch('/api/auth/me', {
                 credentials: 'include'
             });
-
             if (response.ok) {
                 const data = await response.json();
                 setUserData(data);
@@ -54,6 +41,8 @@ export function useUser() {
                 credentials: 'include'
             });
             setUserData(null);
+            router.push('/');
+
         } catch (error) {
             console.error('Erro ao fazer logout:', error);
         }

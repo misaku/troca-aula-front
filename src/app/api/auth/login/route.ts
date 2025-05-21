@@ -1,31 +1,36 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import { serialize } from 'cookie'
+import {NextRequest, NextResponse} from 'next/server';
+import {serialize} from 'cookie'
 import api from "@/api.service";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    const {email, password} = req.body
-    const payload = {
-        password,
-        email,
-    }
+
+export async function POST(req: NextRequest) {
+    const { email, password } = await req.json();
+
     try {
-        const response = await api.post('/auth/login', payload);
 
-        if (response.status === 200) {
-            return res.status(401).json({message: 'Credenciais inválidas'})
-        }
+        const response = await api.post('/auth/login', { email, password });
+        const { access_token:token } = response.data;
 
-        const {token} = response.data;
+        const res = NextResponse.json({ ok: true });
 
-        res.setHeader('Set-Cookie', serialize('token', token, {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            path: '/',
-            sameSite: 'strict',
-        }))
 
-        return res.status(200).json({ok: true})
+        const maxAge = 7 * 24 * 60 * 60 * 1000;
+        const expiresAt = new Date(Date.now() + maxAge)
+
+        res.headers.set(
+            'Set-Cookie',
+            serialize('token', token, {
+                httpOnly: true,
+                secure: process.env.NODE_ENV === 'production',
+                path: '/',
+                sameSite: 'strict',
+                expires: expiresAt,
+                maxAge: maxAge,
+            })
+        );
+
+        return res;
     } catch (e) {
-        return res.status(500).json({message: 'Erro interno'})
+        return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
     }
 }

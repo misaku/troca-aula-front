@@ -1,6 +1,13 @@
 'use client'
-import styled, {css} from 'styled-components'
+import styled from 'styled-components'
 import Logo from "@/app/components/Logo";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import Base64 from "crypto-js/enc-base64";
+import sha1 from "crypto-js/sha1";
+import {toast} from "react-toastify";
+import * as Yup from "yup";
+import {useRouter} from "next/navigation";
 
 const Wrapper = styled.div`
     display: flex;
@@ -9,7 +16,7 @@ const Wrapper = styled.div`
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    
+
 `
 const Content = styled.div`
     display: flex;
@@ -21,6 +28,13 @@ const Content = styled.div`
     align-items: center;
     justify-content: center;
     padding: 20px;
+    label{
+        width: 100%;
+    }
+    p {
+        color: #993535;
+        text-transform: uppercase;
+    }
 
     dt {
         margin-top: 20px;
@@ -82,6 +96,7 @@ const Content = styled.div`
         color: #ffffff;
         text-transform: uppercase;
         text-decoration: none;
+
         &:hover {
             text-decoration: underline;
         }
@@ -95,16 +110,53 @@ const Card = styled.div`
     margin: 20px;
     border-radius: 10px;
     overflow: hidden;
-    ${Content}{
-        &:nth-child(2){
+
+    ${Content} {
+        &:nth-child(2) {
             background-color: #509BA1;
             max-width: 400px;
         }
     }
 `
 
-
+const validationSchema = Yup.object({
+    email: Yup.string().required('E-mail é obrigatório'),
+    password: Yup.string().required('Senha é obrigatório'),
+});
 export default function Home() {
+    const router = useRouter()
+    const {register, handleSubmit, formState} = useForm({
+        resolver: yupResolver(validationSchema)
+    });
+
+
+        const submidt = handleSubmit(async (data) => {
+            const payload = {
+                password: Base64.stringify(sha1(data.password)),
+                email: data.email,
+            }
+
+            try {
+                // const response = await api.post('/auth/login', payload);
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                    credentials: 'include',
+                })
+                if (response.ok) {
+                    router.push('/dashboard');
+                    toast.success('Login realizado com sucesso');
+                } else {
+                    toast.error( 'Erro ao fazer login');
+                }
+            } catch (error) {
+                toast.error('Erro ao fazer login');
+            }
+        })
+
+
+
     return (
         <Wrapper>
             <Card>
@@ -134,9 +186,15 @@ export default function Home() {
                     </dl>
                 </Content>
                 <Content>
-                    <input placeholder={'e-mail'} type={'email'}/>
-                    <input placeholder={'senha'} type={'password'}/>
-                    <button>Entrar</button>
+                    <label>
+                        <input {...register("email")} placeholder={'e-mail'} type={'email'}/>
+                        {formState.errors?.email && (<p>{formState.errors.email.message}</p>)}
+                    </label>
+                    <label>
+                        <input {...register("password")} placeholder={'senha'} type={'password'}/>
+                        {formState.errors?.password && (<p>{formState.errors.password.message}</p>)}
+                    </label>
+                    <button type={"button"} onClick={submidt}>Entrar</button>
                     <a href={'./cadastro'}>Cadastrar</a>
                 </Content>
             </Card>

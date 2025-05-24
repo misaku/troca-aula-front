@@ -297,6 +297,43 @@ export default function Home() {
         }
     );
 
+    const accept = (id: any)=>async () => {
+        const payload = {
+            registredById: user?.id,
+        }
+        try {
+            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
+            toast.success('Aula aprovada com sucesso')
+            loadClasses()
+        } catch (error) {
+            toast.error('Erro ao aprovar aula')
+        }
+    };
+
+    const aprove = (id: any)=>async () => {
+        const payload = {
+            approvedById: user?.id,
+        }
+        try {
+            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
+            toast.success('Aula aprovada com sucesso')
+            loadClasses()
+        } catch (error) {
+            console.log({error})
+            toast.error('Erro ao aprovar aula')
+        }
+    };
+
+    const deleteData = (id: any) => async() => {
+        try {
+            await axios.delete(`/api/classes/${id}`);
+            toast.success('Aula removida com sucesso')
+            loadClasses()
+        } catch (error) {
+            toast.error('Erro ao remover aula')
+        }
+    };
+
     useEffect(() => {
         if (!user) refreshUserData();
     }, [user]);
@@ -321,7 +358,6 @@ export default function Home() {
         if (user?.profileId === 3) return classes.filter(item => item?.registredById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
 
         return classes.filter(item => item?.registredById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
-        ;
     }, [all, classes, search, user])
     return (<>
             <Header>
@@ -341,15 +377,16 @@ export default function Home() {
                             <button className={all ? 'active' : 'false'} onClick={() => setAll(true)}>Aulas
                                 Disponiveis
                             </button>
-                            <button className={!all ? 'active' : 'false'} onClick={() => setAll(false)}>Minhas Aulas
+                            <button className={!all ? 'active' : 'false'} onClick={() => setAll(false)}>
+                                {user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'}
                             </button>
                         </TabHeader>
                         <CardContent>
-                            {all && (
+                            {all && user?.profileId != 3 && (
                                 <>
                                     <Form onSubmit={submit}>
                                         <input
-                                            value={school?.name?? 'Nome da Escola'} disabled={true} type={'text'}/>
+                                            value={school?.name ?? 'Nome da Escola'} disabled={true} type={'text'}/>
                                         <label>
                                             <select
                                                 {...register("subject")}
@@ -400,6 +437,7 @@ export default function Home() {
                                         <th>Escola</th>
                                         <th>Inicio</th>
                                         <th>Termino</th>
+                                        {user?.profileId != 3 && (<th>Professor</th>)}
                                         <th>Ações</th>
                                     </tr>
                                     </thead>
@@ -410,8 +448,23 @@ export default function Home() {
                                             <td>{item?.school?.name}</td>
                                             <td>{format(new Date(item?.statededAt), 'dd/MM/yyyy HH:mm:ss')}</td>
                                             <td>{format(new Date(item?.finishedAt), 'dd/MM/yyyy HH:mm:ss')}</td>
+                                            {user?.profileId != 3 && (<td>{item?.registredBy?.name}</td>)}
                                             <td>
-                                                <button>aceitar</button>
+                                                {user?.profileId == 3 ?
+                                                    (!item?.registredBy && (<button onClick={accept(item?.id)}>aceitar</button>)) :
+                                                    (
+                                                        <>
+                                                            {
+                                                                !item?.registredBy ? (
+                                                                    <button onClick={deleteData(item?.id)}>deletar</button>
+                                                                ) : (
+                                                                    !item?.approvedById && (<button onClick={aprove(item?.id)}>aprovar</button>)
+                                                                )
+                                                            }
+
+
+                                                        </>
+                                                    )}
                                             </td>
                                         </tr>
                                     ))}

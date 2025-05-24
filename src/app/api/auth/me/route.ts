@@ -17,8 +17,8 @@ export async function GET() {
 
         const { payload } = await jwtVerify(tokenCookie.value, secret);
         // @ts-ignore
-        const [upsUser] = payload?.upsUser ?? [];
-        console.log(payload?.upsUser);
+        const [upsUser] = payload?.sub?.upsUser ?? [];
+        console.log(payload);
         return NextResponse.json({
             id: payload?.sub?.id,
             name: payload?.sub?.name,

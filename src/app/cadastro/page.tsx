@@ -118,12 +118,14 @@ const Card = styled.div`
         }
     }
 `
+
 const validationSchema = Yup.object({
     name: Yup.string().required('Nome é obrigatório'),
     email: Yup.string().required('E-mail é obrigatório'),
     phone: Yup.string().required('Telefone é obrigatório'),
     password: Yup.string().required('Senha é obrigatório'),
     confirmpPass: Yup.string()
+        // @ts-ignore
         .oneOf([Yup.ref('password'), null], 'As senhas não conferem')
 });
 
@@ -146,7 +148,9 @@ export default function Home() {
             await api.post('/users', payload);
             toast.success('Usuário cadastrado com sucesso')
             redirect('/')
-        } catch (_) {}
+        } catch (e) {
+            console.error(e);
+        }
 
 
     })

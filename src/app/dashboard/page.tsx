@@ -8,7 +8,7 @@ import * as Yup from 'yup';
 import api from "@/api.service";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {toast} from "react-toastify";
-import {userHook} from "@/user/user.hook";
+import {useUserHook} from "@/user/useUserHook";
 import axios from "axios";
 
 const Wrapper = styled.div`
@@ -254,8 +254,8 @@ const validationSchema = Yup.object({
 
 export default function Home() {
     const [classes, setClasses] = useState([])
-    const [school, setSchool] = useState()
-    const [subjects, setSubjects] = useState([])
+    const [school, setSchool] = useState<any>()
+    const [subjects, setSubjects] = useState<any[]>([])
     const [preSearch, setPreSearch] = useState('')
     const [search, setSerch] = useState('')
     const [all, setAll] = useState<boolean>(true)
@@ -264,7 +264,7 @@ export default function Home() {
         resolver: yupResolver(validationSchema),
     });
 
-    const {user, logout, refreshUserData} = userHook();
+    const {user, logout, refreshUserData} = useUserHook();
 
     const loadClasses = useCallback(() => {
         axios.get(`/api/classes`, {
@@ -281,6 +281,7 @@ export default function Home() {
             console.log(data)
             const {finishedAt, startAt, subject} = data;
             const payload = {
+                // @ts-ignore
                 schoolId: school?.id,
                 subjectId: subject,
                 createdByd: user?.id,
@@ -353,10 +354,13 @@ export default function Home() {
 
     const classesFiltered = useMemo(() => {
         if (all) {
+            // @ts-ignore
             return classes.filter(item => item?.registredById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
         }
+        // @ts-ignore
         if (user?.profileId === 3) return classes.filter(item => item?.registredById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
 
+        // @ts-ignore
         return classes.filter(item => item?.registredById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
     }, [all, classes, search, user])
     return (<>
@@ -378,11 +382,14 @@ export default function Home() {
                                 Disponiveis
                             </button>
                             <button className={!all ? 'active' : 'false'} onClick={() => setAll(false)}>
-                                {user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'}
+                                {        // @ts-ignore
+                                    user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'
+                                }
                             </button>
                         </TabHeader>
                         <CardContent>
-                            {all && user?.profileId != 3 && (
+                            {        // @ts-ignore
+                                all && user?.profileId != 3 && (
                                 <>
                                     <Form onSubmit={submit}>
                                         <input
@@ -442,7 +449,7 @@ export default function Home() {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {classesFiltered.map((item, index) => (
+                                    {classesFiltered.map((item: any, index) => (
                                         <tr key={`item-${item?.id}`}>
                                             <td>{item?.subject?.name}</td>
                                             <td>{item?.school?.name}</td>

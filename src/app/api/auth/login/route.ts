@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
 
         return res;
     } catch (e) {
+        console.error(e);
         return NextResponse.json({ error: 'Credenciais inválidas' }, { status: 401 });
     }
 }

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { serialize } from 'cookie';
 
-export async function POST(req: NextRequest) {
+export async function POST() {
     const res = NextResponse.json({ ok: true });
 
     res.headers.set(

@@ -4,7 +4,7 @@ import {UserData} from "@/user/user.types";
 import {useRouter} from "next/navigation";
 
 
-export function userHook() {
+export function useUserHook() {
     const [userData, setUserData] = useState<UserData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
@@ -49,7 +49,7 @@ export function userHook() {
     };
 
     return {
-        user: userData,
+        user: userData as any,
         isLoading,
         logout,
         refreshUserData: fetchUserData

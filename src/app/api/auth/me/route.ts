@@ -19,13 +19,18 @@ export async function GET() {
         // @ts-ignore
         const [upsUser] = payload?.sub?.upsUser ?? [];
         console.log(payload);
+
         return NextResponse.json({
+            // @ts-ignore
             id: payload?.sub?.id,
+            // @ts-ignore
             name: payload?.sub?.name,
+            // @ts-ignore
             email: payload?.sub?.email,
             profileId: upsUser?.profileId
         });
     } catch (error) {
+        console.error(error);
         return NextResponse.json({ error: 'Token inválido' }, { status: 401 });
     }
 }

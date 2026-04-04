@@ -74,9 +74,9 @@ describe('Dashboard Page', () => {
 
     it('renders and loads data', async () => {
         render(<Home />);
-        
+
         expect(screen.getByText(/Olá, Test User/)).toBeInTheDocument();
-        
+
         await waitFor(() => {
             expect(axios.get).toHaveBeenCalledWith('/api/classes', expect.any(Object));
             expect(api.get).toHaveBeenCalledWith('/schools/1');
@@ -86,9 +86,9 @@ describe('Dashboard Page', () => {
 
     it('filters classes based on tabs', async () => {
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
-        expect(screen.queryByText('Science')).not.toBeInTheDocument(); // registredById != null is hidden in "Aulas Disponiveis"
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
+        expect(screen.queryByRole('cell', { name: 'Science' })).not.toBeInTheDocument(); // registredById != null is hidden in "Aulas Disponiveis"
 
         const myClassesButton = screen.getByText('Aulas aceitas');
         fireEvent.click(myClassesButton);
@@ -101,23 +101,23 @@ describe('Dashboard Page', () => {
 
     it('handles search', async () => {
         render(<Home />);
-        
+
         const searchInput = screen.getByPlaceholderText('Pesquisar');
         fireEvent.change(searchInput, { target: { value: 'Math' } });
-        
+
         const searchButton = screen.getByText('Buscar');
         fireEvent.click(searchButton);
 
         await waitFor(() => {
-            expect(screen.getByText('Math')).toBeInTheDocument();
+            expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument();
         });
     });
 
     it('submits a new class', async () => {
         (api.post as any).mockResolvedValue({});
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
 
         fireEvent.change(screen.getByRole('combobox'), { target: { value: '1' } });
         fireEvent.change(screen.getByPlaceholderText('Inicio'), { target: { value: '2023-01-01T10:00' } });
@@ -134,8 +134,8 @@ describe('Dashboard Page', () => {
     it('handles submit error', async () => {
         (api.post as any).mockRejectedValue(new Error('Fail'));
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
 
         fireEvent.change(screen.getByRole('combobox'), { target: { value: '1' } });
         fireEvent.change(screen.getByPlaceholderText('Inicio'), { target: { value: '2023-01-01T10:00' } });
@@ -151,9 +151,9 @@ describe('Dashboard Page', () => {
     it('deletes a class', async () => {
         (axios.delete as any).mockResolvedValue({});
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
-        
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
+
         const deleteButton = screen.getByText('deletar');
         fireEvent.click(deleteButton);
 
@@ -166,9 +166,9 @@ describe('Dashboard Page', () => {
     it('handles delete error', async () => {
         (axios.delete as any).mockRejectedValue(new Error('Fail'));
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
-        
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
+
         const deleteButton = screen.getByText('deletar');
         fireEvent.click(deleteButton);
 
@@ -180,11 +180,12 @@ describe('Dashboard Page', () => {
     it('approves a class', async () => {
         (axios.patch as any).mockResolvedValue({});
         render(<Home />);
-        
-        fireEvent.click(screen.getByText('Aulas aceitas'));
-        
-        await waitFor(() => expect(screen.getByText('Science')).toBeInTheDocument());
-        
+
+        const myClassesButton = screen.getByText('Aulas aceitas');
+        fireEvent.click(myClassesButton);
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Science' })).toBeInTheDocument());
+
         const approveButton = screen.getByText('aprovar');
         fireEvent.click(approveButton);
 
@@ -198,11 +199,12 @@ describe('Dashboard Page', () => {
         (axios.patch as any).mockRejectedValue(new Error('Fail'));
         console.log = vi.fn();
         render(<Home />);
-        
-        fireEvent.click(screen.getByText('Aulas aceitas'));
-        
-        await waitFor(() => expect(screen.getByText('Science')).toBeInTheDocument());
-        
+
+        const myClassesButton = screen.getByText('Aulas aceitas');
+        fireEvent.click(myClassesButton);
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Science' })).toBeInTheDocument());
+
         const approveButton = screen.getByText('aprovar');
         fireEvent.click(approveButton);
 
@@ -237,9 +239,9 @@ describe('Dashboard Page', () => {
         (axios.patch as any).mockResolvedValue({});
 
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
-        
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
+
         const acceptButton = screen.getByText('aceitar');
         fireEvent.click(acceptButton);
 
@@ -248,7 +250,7 @@ describe('Dashboard Page', () => {
             expect(toast.success).toHaveBeenCalledWith('Aula aprovada com sucesso');
         });
     });
-    
+
     it('handles accept error for teacher', async () => {
         (useUserHook as any).mockReturnValue({
             user: { ...mockUser, profileId: 3 },
@@ -258,14 +260,80 @@ describe('Dashboard Page', () => {
         (axios.patch as any).mockRejectedValue(new Error('Fail'));
 
         render(<Home />);
-        
-        await waitFor(() => expect(screen.getByText('Math')).toBeInTheDocument());
-        
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
+
         const acceptButton = screen.getByText('aceitar');
         fireEvent.click(acceptButton);
 
         await waitFor(() => {
             expect(toast.error).toHaveBeenCalledWith('Erro ao aprovar aula');
         });
+    });
+
+    it('handles subjects and school fetch error', async () => {
+        (api.get as any).mockImplementation((url: string) => {
+             return Promise.reject(new Error('Network error'));
+        });
+        render(<Home />);
+        await waitFor(() => {
+            expect(api.get).toHaveBeenCalledWith('/schools/1');
+            expect(api.get).toHaveBeenCalledWith('/subjects');
+        });
+    });
+
+    it('renders "Minhas Aulas" tab for teachers', async () => {
+        (useUserHook as any).mockReturnValue({
+            user: { ...mockUser, profileId: 3 },
+            logout: mockLogout,
+            refreshUserData: mockRefreshUserData,
+        });
+        render(<Home />);
+
+        const myClassesButton = screen.getByText('Minhas Aulas');
+        fireEvent.click(myClassesButton);
+
+        expect(myClassesButton).toHaveClass('active');
+    });
+
+    it('filters correctly for teachers in "Minhas Aulas"', async () => {
+        (useUserHook as any).mockReturnValue({
+            user: { ...mockUser, profileId: 3 },
+            logout: mockLogout,
+            refreshUserData: mockRefreshUserData,
+        });
+        render(<Home />);
+
+        const myClassesButton = screen.getByText('Minhas Aulas');
+        fireEvent.click(myClassesButton);
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Science' })).toBeInTheDocument());
+        expect(screen.queryByRole('cell', { name: 'Math' })).not.toBeInTheDocument();
+    });
+
+    it('filters by search text', async () => {
+        render(<Home />);
+
+        const searchInput = screen.getByPlaceholderText('Pesquisar');
+        fireEvent.change(searchInput, { target: { value: 'Nonexistent' } });
+        fireEvent.click(screen.getByText('Buscar'));
+
+        await waitFor(() => {
+            expect(screen.queryByRole('cell', { name: 'Math' })).not.toBeInTheDocument();
+        });
+    });
+
+    it('shows classes when profileId is not 3 and not "all"', async () => {
+         (useUserHook as any).mockReturnValue({
+            user: { ...mockUser, profileId: 1 },
+            logout: mockLogout,
+            refreshUserData: mockRefreshUserData,
+        });
+        render(<Home />);
+
+        const acceptedButton = screen.getByText('Aulas aceitas');
+        fireEvent.click(acceptedButton);
+
+        await waitFor(() => expect(screen.getByRole('cell', { name: 'Science' })).toBeInTheDocument());
     });
 });

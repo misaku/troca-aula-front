@@ -344,11 +344,11 @@ export default function Home() {
     }, [loadClasses]);
     useEffect(() => {
         api.get('/schools/1').then((data) => {
-            setSchool(data.data)
-        })
+            setSchool(data?.data)
+        }).catch(() => {})
         api.get('/subjects').then((data) => {
-            setSubjects(data.data)
-        })
+            setSubjects(data?.data || [])
+        }).catch(() => {})
     }, []);
 
 
@@ -378,10 +378,10 @@ export default function Home() {
                     <Card>
 
                         <TabHeader>
-                            <button className={all ? 'active' : 'false'} onClick={() => setAll(true)}>Aulas
+                            <button className={all ? 'active' : 'inactive'} onClick={() => setAll(true)}>Aulas
                                 Disponiveis
                             </button>
-                            <button className={!all ? 'active' : 'false'} onClick={() => setAll(false)}>
+                            <button className={!all ? 'active' : 'inactive'} onClick={() => setAll(false)}>
                                 {        // @ts-ignore
                                     user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'
                                 }

@@ -1,0 +1,4916 @@
+The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
+
+[1m[46m RUN [49m[22m [36mv4.1.2 [39m[90m/home/michelkuguio/Documentos/troca-aula-front[39m
+
+ [32m✓[39m src/api.service.test.tsx[2m > [22mapi service[2m > [22mshould pass through success response[32m 2[2mms[22m[39m
+ [32m✓[39m src/api.service.test.tsx[2m > [22mapi service[2m > [22mshould handle error and show toast[32m 3[2mms[22m[39m
+ [32m✓[39m src/middleware.test.ts[2m > [22mMiddleware[2m > [22mallows public paths[32m 2[2mms[22m[39m
+ [32m✓[39m src/middleware.test.ts[2m > [22mMiddleware[2m > [22mallows /cadastro[32m 0[2mms[22m[39m
+ [32m✓[39m src/middleware.test.ts[2m > [22mMiddleware[2m > [22mredirects to / if token is missing on private path[32m 2[2mms[22m[39m
+ [32m✓[39m src/middleware.test.ts[2m > [22mMiddleware[2m > [22mallows access if token is present[32m 0[2mms[22m[39m
+ [32m✓[39m src/middleware.test.ts[2m > [22mMiddleware[2m > [22mhandles empty cookie header[32m 0[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22mfetches user data on mount successfully[32m 69[2mms[22m[39m
+ [32m✓[39m src/app/components/Logo.test.tsx[2m > [22mLogo Component[2m > [22mrenders without crashing[32m 81[2mms[22m[39m
+ [32m✓[39m src/app/components/Logo.test.tsx[2m > [22mLogo Component[2m > [22mapplies size scale[32m 90[2mms[22m[39m
+ [32m✓[39m src/app/components/Logo.test.tsx[2m > [22mLogo Component[2m > [22muses default size when not provided[32m 9[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22msets user to null if fetch fails[32m 54[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22msets user to null if fetch throws error[32m 55[2mms[22m[39m
+ [32m✓[39m src/app/cadastro/page.test.tsx[2m > [22mCadastro Page[2m > [22mrenders cadastro form[32m 122[2mms[22m[39m
+ [32m✓[39m src/app/cadastro/page.test.tsx[2m > [22mCadastro Page[2m > [22mshows validation errors[32m 30[2mms[22m[39m
+ [32m✓[39m src/app/cadastro/page.test.tsx[2m > [22mCadastro Page[2m > [22mshows error when passwords do not match[32m 14[2mms[22m[39m
+ [32m✓[39m src/app/cadastro/page.test.tsx[2m > [22mCadastro Page[2m > [22msuccessful registration[32m 13[2mms[22m[39m
+ [32m✓[39m src/app/cadastro/page.test.tsx[2m > [22mCadastro Page[2m > [22mhandles registration error[32m 15[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx[2m > [22mLogin Page (Home)[2m > [22mrenders login form[32m 125[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx[2m > [22mLogin Page (Home)[2m > [22mshows validation errors[32m 21[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx[2m > [22mLogin Page (Home)[2m > [22msuccessful login[32m 16[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx[2m > [22mLogin Page (Home)[2m > [22mfailed login response[32m 9[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx[2m > [22mLogin Page (Home)[2m > [22mlogin fetch throws error[32m 9[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22mlogs out successfully[32m 55[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22mhandles logout error[32m 58[2mms[22m[39m
+ [32m✓[39m src/user/useUserHook.test.tsx[2m > [22museUserHook[2m > [22mcan refresh user data[32m 53[2mms[22m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mrenders and loads data[32m 151[2mms[22m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mfilters classes based on tabs[33m 1019[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles search[33m 1018[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"Math"[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m"Math"[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22msubmits a new class[33m 1010[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles submit error[33m 1013[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mdeletes a class[33m 1009[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [31m×[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles delete error[33m 1009[2mms[22m[39m
+[31m   → Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[31m
+  [33mvalue[31m=[32m"1"[31m
+[36m>[31m
+  [0mMath[0m
+[36m</option>[31m
+
+Ignored nodes: comments, script, style
+[36m<td>[31m
+  [0mMath[0m
+[36m</td>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<header[31m
+      [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+        [33mpercent[31m=[32m"0.6"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+        [36m>[31m
+          [36m<h1>[31m
+            [0mTroca[0m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+            [36m/>[31m
+          [36m</h1>[31m
+          [36m<h1>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+              [33mtype[31m=[32m"inverse"[31m
+            [36m/>[31m
+            [0mAula[0m
+          [36m</h1>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"profile"[31m
+      [36m>[31m
+        [36m<p>[31m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[31m
+        [36m<button>[31m
+          [0mSair[0m
+        [36m</button>[31m
+      [36m</div>[31m
+    [36m</header>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+    [36m>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+      [36m>[31m
+        [36m<section[31m
+          [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+          [36m>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"active"[31m
+            [36m>[31m
+              [0mAulas Disponiveis[0m
+            [36m</button>[31m
+            [36m<button[31m
+              [33mclass[31m=[32m"false"[31m
+            [36m>[31m
+              [0mAulas aceitas[0m
+            [36m</button>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+          [36m>[31m
+            [36m<form[31m
+              [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+            [36m>[31m
+              [36m<input[31m
+                [33mdisabled[31m=[32m""[31m
+                [33mtype[31m=[32m"text"[31m
+                [33mvalue[31m=[32m"School A"[31m
+              [36m/>[31m
+              [36m<label>[31m
+                [36m<select[31m
+                  [33mname[31m=[32m"subject"[31m
+                [36m>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"-1"[31m
+                  [36m>[31m
+                    [0mMateria[0m
+                  [36m</option>[31m
+                  [36m<option[31m
+                    [33mvalue[31m=[32m"1"[31m
+                  [36m>[31m
+                    [0mMath[0m
+                  [36m</option>[31m
+                [36m</select>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"startAt"[31m
+                  [33mplaceholder[31m=[32m"Inicio"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<label>[31m
+                [36m<input[31m
+                  [33mname[31m=[32m"finishedAt"[31m
+                  [33mplaceholder[31m=[32m"Termino"[31m
+                  [33mtype[31m=[32m"datetime-local"[31m
+                [36m/>[31m
+              [36m</label>[31m
+              [36m<button>[31m
+                [0mCadastrar[0m
+              [36m</button>[31m
+            [36m</form>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+            [36m/>[31m
+            [36m<header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mplaceholder[31m=[32m"Pesquisar"[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m""[31m
+                [36m/>[31m
+                [36m<button[31m
+                  [33mtype[31m=[32m"button"[31m
+                [36m>[31m
+                  [0mBuscar[0m
+                [36m</button>[31m
+              [36m</div>[31m
+            [36m</header>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+            [36m>[31m
+              [36m<table[31m
+                [33mcellpadding[31m=[32m"0"[31m
+                [33mcellspacing[31m=[32m"0"[31m
+              [36m>[31m
+                [36m<thead>[31m
+                  [36m<tr>[31m
+                    [36m<th>[31m
+                      [0mMateria[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mEscola[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mInicio[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mTermino[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mProfessor[0m
+                    [36m</th>[31m
+                    [36m<th>[31m
+                      [0mAções[0m
+                    [36m</th>[31m
+                  [36m</tr>[31m
+                [36m</thead>[31m
+                [36m<tbody>[31m
+                  [36m<tr>[31m
+                    [36m<td>[31m
+                      [0mMath[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0mSchool A[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[31m
+                    [36m<td>[31m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[31m
+                    [36m<td />[31m
+                    [36m<td>[31m
+                      [36m<button>[31m
+                        [0mdeletar[0m
+                      [36m</button>[31m
+                    [36m</td>[31m
+                  [36m</tr>[31m
+                [36m</tbody>[31m
+              [36m</table>[31m
+            [36m</div>[31m
+          [36m</div>[31m
+        [36m</section>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m
+
+Ignored nodes: comments, script, style
+[36m<html>[31m
+  [36m<head />[31m
+  [36m<body>[31m
+    [36m<div>[31m
+      [36m<header[31m
+        [33mclass[31m=[32m"sc-hBDmJg iaVZuO"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-fmZSGO jLiuYS"[31m
+          [33mpercent[31m=[32m"0.6"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"sc-hKDTPf gicWqk"[31m
+          [36m>[31m
+            [36m<h1>[31m
+              [0mTroca[0m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk jRCPCI"[31m
+              [36m/>[31m
+            [36m</h1>[31m
+            [36m<h1>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-bXdtCk bxktEV"[31m
+                [33mtype[31m=[32m"inverse"[31m
+              [36m/>[31m
+              [0mAula[0m
+            [36m</h1>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"profile"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[31m
+          [36m<button>[31m
+            [0mSair[0m
+          [36m</button>[31m
+        [36m</div>[31m
+      [36m</header>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"sc-gwsNht gyeipd"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"sc-dYOLZc gCjFZe"[31m
+        [36m>[31m
+          [36m<section[31m
+            [33mclass[31m=[32m"sc-hoLldG lfJXkc"[31m
+          [36m>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-llIIlC joeZXN"[31m
+            [36m>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"active"[31m
+              [36m>[31m
+                [0mAulas Disponiveis[0m
+              [36m</button>[31m
+              [36m<button[31m
+                [33mclass[31m=[32m"false"[31m
+              [36m>[31m
+                [0mAulas aceitas[0m
+              [36m</button>[31m
+            [36m</div>[31m
+            [36m<div[31m
+              [33mclass[31m=[32m"sc-jZhnRx gMPMUF"[31m
+            [36m>[31m
+              [36m<form[31m
+                [33mclass[31m=[32m"sc-dTdQuR hrayL"[31m
+              [36m>[31m
+                [36m<input[31m
+                  [33mdisabled[31m=[32m""[31m
+                  [33mtype[31m=[32m"text"[31m
+                  [33mvalue[31m=[32m"School A"[31m
+                [36m/>[31m
+                [36m<label>[31m
+                  [36m<select[31m
+                    [33mname[31m=[32m"subject"[31m
+                  [36m>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"-1"[31m
+                    [36m>[31m
+                      [0mMateria[0m
+                    [36m</option>[31m
+                    [36m<option[31m
+                      [33mvalue[31m=[32m"1"[31m
+                    [36m>[31m
+                      [0mMath[0m
+                    [36m</option>[31m
+                  [36m</select>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"startAt"[31m
+                    [33mplaceholder[31m=[32m"Inicio"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<label>[31m
+                  [36m<input[31m
+                    [33mname[31m=[32m"finishedAt"[31m
+                    [33mplaceholder[31m=[32m"Termino"[31m
+                    [33mtype[31m=[32m"datetime-local"[31m
+                  [36m/>[31m
+                [36m</label>[31m
+                [36m<button>[31m
+                  [0mCadastrar[0m
+                [36m</button>[31m
+              [36m</form>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-elFkmj bCYYh"[31m
+              [36m/>[31m
+              [36m<header>[31m
+                [36m<div[31m
+                  [33mclass[31m=[32m"sc-kThouk jobnEj"[31m
+                [36m>[31m
+                  [36m<input[31m
+                    [33mplaceholder[31m=[32m"Pesquisar"[31m
+                    [33mtype[31m=[32m"text"[31m
+                    [33mvalue[31m=[32m""[31m
+                  [36m/>[31m
+                  [36m<button[31m
+                    [33mtype[31m=[32m"button"[31m
+                  [36m>[31m
+                    [0mBuscar[0m
+                  [36m</button>[31m
+                [36m</div>[31m
+              [36m</header>[31m
+              [36m<div[31m
+                [33mclass[31m=[32m"sc-jMpmlX jgFXek"[31m
+              [36m>[31m
+                [36m<table[31m
+                  [33mcellpadding[31m=[32m"0"[31m
+                  [33mcellspacing[31m=[32m"0"[31m
+                [36m>[31m
+                  [36m<thead>[31m
+                    [36m<tr>[31m
+                      [36m<th>[31m
+                        [0mMateria[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mEscola[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mInicio[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mTermino[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mProfessor[0m
+                      [36m</th>[31m
+                      [36m<th>[31m
+                        [0mAções[0m
+                      [36m</th>[31m
+                    [36m</tr>[31m
+                  [36m</thead>[31m
+                  [36m<tbody>[31m
+                    [36m<tr>[31m
+                      [36m<td>[31m
+                        [0mMath[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0mSchool A[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[31m
+                      [36m<td>[31m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[31m
+                      [36m<td />[31m
+                      [36m<td>[31m
+                        [36m<button>[31m
+                          [0mdeletar[0m
+                        [36m</button>[31m
+                      [36m</td>[31m
+                    [36m</tr>[31m
+                  [36m</tbody>[31m
+                [36m</table>[31m
+              [36m</div>[31m
+            [36m</div>[31m
+          [36m</section>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</body>[31m
+[36m</html>[31m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mapproves a class[32m 68[2mms[22m[39m
+[90mstderr[2m | src/app/dashboard/page.test.tsx[2m > [22m[2mDashboard Page[2m > [22m[2mcalls logout when button clicked
+[22m[39mAn update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+[90mstderr[2m | src/app/dashboard/page.test.tsx[2m > [22m[2mDashboard Page[2m > [22m[2mrefreshes user data if no user
+[22m[39mAn update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to Home inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles approve error[32m 68[2mms[22m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mcalls logout when button clicked[32m 8[2mms[22m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mrefreshes user data if no user[32m 7[2mms[22m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mallows teacher to accept a class[32m 63[2mms[22m[39m
+ [32m✓[39m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles accept error for teacher[32m 66[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 6 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mfilters classes based on tabs
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m90:15[22m[39m
+    [90m 88|[39m         [34mrender[39m([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m 89|[39m
+    [90m 90|[39m         await waitFor(() => expect(screen.getByText('Math')).toBeInThe…
+    [90m   |[39m               [31m^[39m
+    [90m 91|[39m         expect(screen.queryByText('Science')).not.toBeInTheDocument();…
+    [90m 92|[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles search
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"Math"[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m"Math"[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m111:15[22m[39m
+    [90m109|[39m         fireEvent[33m.[39m[34mclick[39m(searchButton)[33m;[39m
+    [90m110|[39m
+    [90m111|[39m         [35mawait[39m [34mwaitFor[39m(() [33m=>[39m {
+    [90m   |[39m               [31m^[39m
+    [90m112|[39m             [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'Math'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m113|[39m         })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22msubmits a new class
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m120:15[22m[39m
+    [90m118|[39m         [34mrender[39m([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m119|[39m
+    [90m120|[39m         await waitFor(() => expect(screen.getByText('Math')).toBeInThe…
+    [90m   |[39m               [31m^[39m
+    [90m121|[39m
+    [90m122|[39m         fireEvent.change(screen.getByRole('combobox'), { target: { val…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles submit error
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m138:15[22m[39m
+    [90m136|[39m         [34mrender[39m([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m137|[39m
+    [90m138|[39m         await waitFor(() => expect(screen.getByText('Math')).toBeInThe…
+    [90m   |[39m               [31m^[39m
+    [90m139|[39m
+    [90m140|[39m         fireEvent.change(screen.getByRole('combobox'), { target: { val…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mdeletes a class
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m155:15[22m[39m
+    [90m153|[39m         [34mrender[39m([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m154|[39m
+    [90m155|[39m         await waitFor(() => expect(screen.getByText('Math')).toBeInThe…
+    [90m   |[39m               [31m^[39m
+    [90m156|[39m
+    [90m157|[39m         [35mconst[39m deleteButton [33m=[39m screen[33m.[39m[34mgetByText[39m([32m'deletar'[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/6]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/app/dashboard/page.test.tsx[2m > [22mDashboard Page[2m > [22mhandles delete error
+[31m[1mTestingLibraryElementError[22m[39m: Found multiple elements with the text: Math
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<option[39m
+  [33mvalue[39m=[32m"1"[39m
+[36m>[39m
+  [0mMath[0m
+[36m</option>[39m
+
+Ignored nodes: comments, script, style
+[36m<td>[39m
+  [0mMath[0m
+[36m</td>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div>[39m
+    [36m<header[39m
+      [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+        [33mpercent[39m=[32m"0.6"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+        [36m>[39m
+          [36m<h1>[39m
+            [0mTroca[0m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+            [36m/>[39m
+          [36m</h1>[39m
+          [36m<h1>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+              [33mtype[39m=[32m"inverse"[39m
+            [36m/>[39m
+            [0mAula[0m
+          [36m</h1>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"profile"[39m
+      [36m>[39m
+        [36m<p>[39m
+          [0mOlá, [0m
+          [0mTest User[0m
+        [36m</p>[39m
+        [36m<button>[39m
+          [0mSair[0m
+        [36m</button>[39m
+      [36m</div>[39m
+    [36m</header>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+    [36m>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+      [36m>[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"active"[39m
+            [36m>[39m
+              [0mAulas Disponiveis[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"false"[39m
+            [36m>[39m
+              [0mAulas aceitas[0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+          [36m>[39m
+            [36m<form[39m
+              [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+            [36m>[39m
+              [36m<input[39m
+                [33mdisabled[39m=[32m""[39m
+                [33mtype[39m=[32m"text"[39m
+                [33mvalue[39m=[32m"School A"[39m
+              [36m/>[39m
+              [36m<label>[39m
+                [36m<select[39m
+                  [33mname[39m=[32m"subject"[39m
+                [36m>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"-1"[39m
+                  [36m>[39m
+                    [0mMateria[0m
+                  [36m</option>[39m
+                  [36m<option[39m
+                    [33mvalue[39m=[32m"1"[39m
+                  [36m>[39m
+                    [0mMath[0m
+                  [36m</option>[39m
+                [36m</select>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"startAt"[39m
+                  [33mplaceholder[39m=[32m"Inicio"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<label>[39m
+                [36m<input[39m
+                  [33mname[39m=[32m"finishedAt"[39m
+                  [33mplaceholder[39m=[32m"Termino"[39m
+                  [33mtype[39m=[32m"datetime-local"[39m
+                [36m/>[39m
+              [36m</label>[39m
+              [36m<button>[39m
+                [0mCadastrar[0m
+              [36m</button>[39m
+            [36m</form>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+            [36m/>[39m
+            [36m<header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mplaceholder[39m=[32m"Pesquisar"[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m""[39m
+                [36m/>[39m
+                [36m<button[39m
+                  [33mtype[39m=[32m"button"[39m
+                [36m>[39m
+                  [0mBuscar[0m
+                [36m</button>[39m
+              [36m</div>[39m
+            [36m</header>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+            [36m>[39m
+              [36m<table[39m
+                [33mcellpadding[39m=[32m"0"[39m
+                [33mcellspacing[39m=[32m"0"[39m
+              [36m>[39m
+                [36m<thead>[39m
+                  [36m<tr>[39m
+                    [36m<th>[39m
+                      [0mMateria[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mEscola[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mInicio[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mTermino[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mProfessor[0m
+                    [36m</th>[39m
+                    [36m<th>[39m
+                      [0mAções[0m
+                    [36m</th>[39m
+                  [36m</tr>[39m
+                [36m</thead>[39m
+                [36m<tbody>[39m
+                  [36m<tr>[39m
+                    [36m<td>[39m
+                      [0mMath[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0mSchool A[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 07:00:00[0m
+                    [36m</td>[39m
+                    [36m<td>[39m
+                      [0m01/01/2023 08:00:00[0m
+                    [36m</td>[39m
+                    [36m<td />[39m
+                    [36m<td>[39m
+                      [36m<button>[39m
+                        [0mdeletar[0m
+                      [36m</button>[39m
+                    [36m</td>[39m
+                  [36m</tr>[39m
+                [36m</tbody>[39m
+              [36m</table>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</section>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</div>[39m
+[36m</body>[39m
+
+Ignored nodes: comments, script, style
+[36m<html>[39m
+  [36m<head />[39m
+  [36m<body>[39m
+    [36m<div>[39m
+      [36m<header[39m
+        [33mclass[39m=[32m"sc-hBDmJg iaVZuO"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-fmZSGO jLiuYS"[39m
+          [33mpercent[39m=[32m"0.6"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"sc-hKDTPf gicWqk"[39m
+          [36m>[39m
+            [36m<h1>[39m
+              [0mTroca[0m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk jRCPCI"[39m
+              [36m/>[39m
+            [36m</h1>[39m
+            [36m<h1>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-bXdtCk bxktEV"[39m
+                [33mtype[39m=[32m"inverse"[39m
+              [36m/>[39m
+              [0mAula[0m
+            [36m</h1>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"profile"[39m
+        [36m>[39m
+          [36m<p>[39m
+            [0mOlá, [0m
+            [0mTest User[0m
+          [36m</p>[39m
+          [36m<button>[39m
+            [0mSair[0m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</header>[39m
+      [36m<div[39m
+        [33mclass[39m=[32m"sc-gwsNht gyeipd"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"sc-dYOLZc gCjFZe"[39m
+        [36m>[39m
+          [36m<section[39m
+            [33mclass[39m=[32m"sc-hoLldG lfJXkc"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-llIIlC joeZXN"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"active"[39m
+              [36m>[39m
+                [0mAulas Disponiveis[0m
+              [36m</button>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"false"[39m
+              [36m>[39m
+                [0mAulas aceitas[0m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sc-jZhnRx gMPMUF"[39m
+            [36m>[39m
+              [36m<form[39m
+                [33mclass[39m=[32m"sc-dTdQuR hrayL"[39m
+              [36m>[39m
+                [36m<input[39m
+                  [33mdisabled[39m=[32m""[39m
+                  [33mtype[39m=[32m"text"[39m
+                  [33mvalue[39m=[32m"School A"[39m
+                [36m/>[39m
+                [36m<label>[39m
+                  [36m<select[39m
+                    [33mname[39m=[32m"subject"[39m
+                  [36m>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"-1"[39m
+                    [36m>[39m
+                      [0mMateria[0m
+                    [36m</option>[39m
+                    [36m<option[39m
+                      [33mvalue[39m=[32m"1"[39m
+                    [36m>[39m
+                      [0mMath[0m
+                    [36m</option>[39m
+                  [36m</select>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"startAt"[39m
+                    [33mplaceholder[39m=[32m"Inicio"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<label>[39m
+                  [36m<input[39m
+                    [33mname[39m=[32m"finishedAt"[39m
+                    [33mplaceholder[39m=[32m"Termino"[39m
+                    [33mtype[39m=[32m"datetime-local"[39m
+                  [36m/>[39m
+                [36m</label>[39m
+                [36m<button>[39m
+                  [0mCadastrar[0m
+                [36m</button>[39m
+              [36m</form>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-elFkmj bCYYh"[39m
+              [36m/>[39m
+              [36m<header>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sc-kThouk jobnEj"[39m
+                [36m>[39m
+                  [36m<input[39m
+                    [33mplaceholder[39m=[32m"Pesquisar"[39m
+                    [33mtype[39m=[32m"text"[39m
+                    [33mvalue[39m=[32m""[39m
+                  [36m/>[39m
+                  [36m<button[39m
+                    [33mtype[39m=[32m"button"[39m
+                  [36m>[39m
+                    [0mBuscar[0m
+                  [36m</button>[39m
+                [36m</div>[39m
+              [36m</header>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"sc-jMpmlX jgFXek"[39m
+              [36m>[39m
+                [36m<table[39m
+                  [33mcellpadding[39m=[32m"0"[39m
+                  [33mcellspacing[39m=[32m"0"[39m
+                [36m>[39m
+                  [36m<thead>[39m
+                    [36m<tr>[39m
+                      [36m<th>[39m
+                        [0mMateria[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mEscola[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mInicio[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mTermino[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mProfessor[0m
+                      [36m</th>[39m
+                      [36m<th>[39m
+                        [0mAções[0m
+                      [36m</th>[39m
+                    [36m</tr>[39m
+                  [36m</thead>[39m
+                  [36m<tbody>[39m
+                    [36m<tr>[39m
+                      [36m<td>[39m
+                        [0mMath[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0mSchool A[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 07:00:00[0m
+                      [36m</td>[39m
+                      [36m<td>[39m
+                        [0m01/01/2023 08:00:00[0m
+                      [36m</td>[39m
+                      [36m<td />[39m
+                      [36m<td>[39m
+                        [36m<button>[39m
+                          [0mdeletar[0m
+                        [36m</button>[39m
+                      [36m</td>[39m
+                    [36m</tr>[39m
+                  [36m</tbody>[39m
+                [36m</table>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</section>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</div>[39m
+  [36m</body>[39m
+[36m</html>[39m
+[90m [2m❯[22m Proxy.waitForWrapper node_modules/.pnpm/@testing-library+dom@10.4.1/node_modules/@testing-library/dom/dist/wait-for.js:[2m163:27[22m[39m
+[36m [2m❯[22m src/app/dashboard/page.test.tsx:[2m170:15[22m[39m
+    [90m168|[39m         [34mrender[39m([33m<[39m[33mHome[39m [33m/[39m[33m>[39m)[33m;[39m
+    [90m169|[39m
+    [90m170|[39m         await waitFor(() => expect(screen.getByText('Math')).toBeInThe…
+    [90m   |[39m               [31m^[39m
+    [90m171|[39m
+    [90m172|[39m         [35mconst[39m deleteButton [33m=[39m screen[33m.[39m[34mgetByText[39m([32m'deletar'[39m)[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/6]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m6 passed[39m[22m[90m (7)[39m
+[2m      Tests [22m [1m[31m6 failed[39m[22m[2m | [22m[1m[32m33 passed[39m[22m[90m (39)[39m
+[2m   Start at [22m 16:58:42
+[2m   Duration [22m 8.42s[2m (transform 312ms, setup 476ms, import 1.82s, tests 7.44s, environment 5.09s)[22m
+

@@ -9,6 +9,9 @@ import {toast} from "react-toastify";
 import * as Yup from "yup";
 import {useRouter} from "next/navigation";
 
+// Importando o nosso botão recém-criado!
+import { BotaoGovBr } from "../components/BotaoGovBr";
+
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
@@ -196,6 +199,10 @@ export default function Home() {
                     </label>
                     <button type={"button"} onClick={submidt}>Entrar</button>
                     <a href={'./cadastro'}>Cadastrar</a>
+                    
+                    {/* Renderizando o componente do Botão Gov.br aqui */}
+                    <BotaoGovBr />
+                    
                 </Content>
             </Card>
 

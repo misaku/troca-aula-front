@@ -154,7 +154,7 @@ export default function MinhasAulasPage() {
   const [filter, setFilter] = useState<EnrollmentStatus | 'ALL'>('ALL');
   
   const { enrollments, loading, error, refetch } = useEnrollments(
-    user ? { userId: user.id } : undefined
+    user ? { userId: Number(user.id) } : undefined
   );
   const { cancelEnrollment, loading: cancelling } = useEnrollmentMutations();
 

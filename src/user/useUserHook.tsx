@@ -1,10 +1,11 @@
 'use client'
 import {useState, useEffect} from 'react';
 import {UserData} from "@/user/user.types";
+import type { UserContextType } from '@/user/user.types';
 import {useRouter} from "next/navigation";
 
 
-export function useUserHook() {
+export function useUserHook(): UserContextType {
     const [userData, setUserData] = useState<UserData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();

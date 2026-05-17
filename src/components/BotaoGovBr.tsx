@@ -31,7 +31,9 @@ export function BotaoGovBr() {
   const handleClick = async () => {
     try {
       const { url } = await authService.getGovbrAuthUrl();
-      window.location.href = url;
+      if (url) {
+        window.location.href = url;
+      }
     } catch (error) {
       console.error('Erro ao iniciar autenticação Gov.br', error);
     }

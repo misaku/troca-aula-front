@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import api from '@/api.service';
-import type { School } from '@/types/master';
 import type { EnrollmentRequest } from '@/types/enrollment';
 
 interface SubstitutionLimitState {
@@ -23,7 +22,7 @@ const getCurrentSemester = (): string => {
   return `${year}-07-01`;
 };
 
-export const useSubstitutionLimit = (userId?: number | string, schoolId?: number | string): SubstitutionLimitState => {
+export const useSubstitutionLimit = (userId?: number | string): SubstitutionLimitState => {
   const [state, setState] = useState<SubstitutionLimitState>({
     current: 0,
     limit: null,
@@ -33,13 +32,13 @@ export const useSubstitutionLimit = (userId?: number | string, schoolId?: number
     error: null,
   });
 
-  const fetchSchoolLimit = useCallback(async (sid: number | string) => {
+  const fetchUserLimit = useCallback(async (uid: number | string) => {
     try {
-      const response = await api.get(`/schools/${sid}`);
-      const school: School = response.data;
-      return school.substitutionLimitPerSemester ?? null;
+      const response = await api.get(`/users/${uid}`);
+      const user = response.data?.data ?? response.data;
+      return user.substitutionLimitPerSemester ?? null;
     } catch (err) {
-      console.error('Error fetching school limit:', err);
+      console.error('Error fetching user limit:', err);
       return null;
     }
   }, []);
@@ -73,7 +72,7 @@ export const useSubstitutionLimit = (userId?: number | string, schoolId?: number
   }, []);
 
   useEffect(() => {
-    if (!userId || !schoolId) {
+    if (!userId) {
       setState(prev => ({ ...prev, loading: false }));
       return;
     }
@@ -83,7 +82,7 @@ export const useSubstitutionLimit = (userId?: number | string, schoolId?: number
       
       try {
         const [limit, current] = await Promise.all([
-          fetchSchoolLimit(schoolId),
+          fetchUserLimit(userId),
           fetchApprovedCount(userId),
         ]);
 
@@ -108,7 +107,7 @@ export const useSubstitutionLimit = (userId?: number | string, schoolId?: number
     };
 
     fetchData();
-  }, [userId, schoolId, fetchSchoolLimit, fetchApprovedCount, calculatePercentage, canApply]);
+  }, [userId, fetchUserLimit, fetchApprovedCount, calculatePercentage, canApply]);
 
   return state;
 };

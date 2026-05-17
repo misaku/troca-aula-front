@@ -3,7 +3,8 @@ export type EnrollmentStatus = 'PENDING' | 'APPROVED' | 'REJECTED' | 'CANCELLED'
 export interface EnrollmentRequest {
   id: number;
   classId: number;
-  userId: number;
+  professorId: number;
+  userId?: number;
   status: EnrollmentStatus;
   rejectionReason?: string | null;
   createdAt: string;
@@ -24,6 +25,7 @@ export interface CreateEnrollmentRequest {
 }
 
 export interface EnrollmentListParams {
+  professorId?: number;
   userId?: number;
   status?: EnrollmentStatus;
   schoolId?: number;

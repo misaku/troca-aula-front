@@ -31,7 +31,7 @@ export interface CreateUserRequest {
   phone?: string;
   password?: string;
   schoolId: number;
-  profileId: 2 | 3;
+  profileId: number;
 }
 
 export interface DashboardStats {

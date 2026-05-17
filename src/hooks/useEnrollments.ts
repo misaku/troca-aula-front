@@ -34,7 +34,7 @@ export const useEnrollments = (params?: EnrollmentListParams): UseEnrollmentsRes
     } finally {
       setLoading(false);
     }
-  }, [params?.userId, params?.status, params?.schoolId]);
+  }, [params?.professorId, params?.userId, params?.status, params?.schoolId]);
 
   useEffect(() => {
     fetchData();

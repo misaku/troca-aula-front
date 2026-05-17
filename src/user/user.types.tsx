@@ -2,6 +2,8 @@ export interface UserData {
     id: string | number;
     name: string;
     email: string;
+    profileId?: number;
+    schoolId?: number;
 }
 
 

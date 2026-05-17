@@ -13,7 +13,7 @@ export interface Teacher {
   totalSubstitutions: number;
 }
 
-export type EnrollmentStatus = 'PENDING' | 'APPROVED' | 'REJECTED';
+export type EnrollmentStatus = 'PENDING' | 'APPROVED' | 'REJECTED' | string;
 
 export interface TeacherCandidate {
   id: string;
@@ -25,10 +25,14 @@ export interface TeacherCandidate {
 
 export interface EnrollmentRequest {
   id: string;
-  userId: string;
-  schoolId: string;
+  professorId?: string;
+  classId?: string;
+  userId?: string;
+  schoolId?: string;
   status: EnrollmentStatus;
-  appliedAt: string;
+  createdAt?: string;
+  appliedAt?: string;
+  professor?: TeacherCandidate;
   user?: TeacherCandidate;
 }
 

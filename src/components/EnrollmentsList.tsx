@@ -212,7 +212,7 @@ export function EnrollmentsList({ schoolId }: EnrollmentsListProps) {
             {enrollments.map((enrollment) => (
               <tr key={enrollment.id}>
                 <td>#{enrollment.id}</td>
-                <td>Professor #{enrollment.userId}</td>
+                <td>Professor #{enrollment.professorId}</td>
                 <td>#{enrollment.classId}</td>
                 <td>
                   <StatusBadge $status={enrollment.status}>

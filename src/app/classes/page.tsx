@@ -97,7 +97,6 @@ export default function ClassesPage() {
   
   const { canApply, loading: limitLoading, current, limit } = useSubstitutionLimit(
     user?.id,
-    user?.schoolId
   );
 
   if (userLoading) {
@@ -152,7 +151,9 @@ export default function ClassesPage() {
               </ClassInfo>
               <ClassInfo>
                 <ClassLabel>Data</ClassLabel>
-                <ClassValue>{format(new Date(classItem.date), 'dd/MM/yyyy HH:mm')}</ClassValue>
+                <ClassValue>
+                  {format(new Date((classItem as any).statededAt || classItem.date), 'dd/MM/yyyy HH:mm')}
+                </ClassValue>
               </ClassInfo>
               <ApplyButton
                 onClick={() => handleApply(classItem.id)}

@@ -273,7 +273,6 @@ export default function Home() {
     
     const { current, limit, percentage, canApply, loading: limitLoading } = useSubstitutionLimit(
         user?.profileId === 3 ? user?.id : undefined,
-        user?.profileId === 3 ? user?.schoolId : undefined
     );
 
     const loadClasses = useCallback(() => {
@@ -310,29 +309,12 @@ export default function Home() {
     );
 
     const accept = (id: any)=>async () => {
-        const payload = {
-            enrolledById: user?.id,
-        }
         try {
-            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
-            toast.success('Aula aprovada com sucesso')
+            await api.post(`/enrollment-requests/request/${id}`);
+            toast.success('Candidatura enviada com sucesso')
             loadClasses()
         } catch (error) {
-            toast.error('Erro ao aprovar aula')
-        }
-    };
-
-    const aprove = (id: any)=>async () => {
-        const payload = {
-            approvedById: user?.id,
-        }
-        try {
-            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
-            toast.success('Aula aprovada com sucesso')
-            loadClasses()
-        } catch (error) {
-            console.log({error})
-            toast.error('Erro ao aprovar aula')
+            toast.error('Erro ao enviar candidatura')
         }
     };
 
@@ -417,7 +399,7 @@ export default function Home() {
                             <button className={all === 'myclasses' ? 'active' : 'inactive'} onClick={() => setAll('myclasses')}>
                                 {user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'}
                             </button>
-                            {user?.profileId == 2 && (
+                            {(user?.profileId == 1 || user?.profileId == 2) && (
                                 <button className={all === 'enrollments' ? 'active' : 'inactive'} onClick={() => setAll('enrollments')}>
                                     Candidaturas
                                 </button>
@@ -523,9 +505,7 @@ export default function Home() {
                                                             {
                                                                 !item?.enrolledBy ? (
                                                                     <button onClick={deleteData(item?.id)}>deletar</button>
-                                                                ) : (
-                                                                    !item?.approvedById && (<button onClick={aprove(item?.id)}>aprovar</button>)
-                                                                )
+                                                                ) : null
                                                             }
 
 

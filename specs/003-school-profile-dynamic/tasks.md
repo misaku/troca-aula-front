@@ -25,8 +25,8 @@ description: "Task list for School Selection by User Profile feature implementat
 
 **Purpose**: No additional setup required - existing services and hooks are sufficient.
 
-- [ ] T001 [P] Verify masterService.getSchools() returns school list in src/services/master.service.tsx
-- [ ] T002 [P] Verify useUserHook returns profileId and schoolId in src/user/useUserHook.tsx
+- [X] T001 [P] Verify masterService.getSchools() returns school list in src/services/master.service.tsx
+- [X] T002 [P] Verify useUserHook returns profileId and schoolId in src/user/useUserHook.tsx
 
 **Checkpoint**: Existing infrastructure verified - proceed to implementation
 
@@ -36,9 +36,9 @@ description: "Task list for School Selection by User Profile feature implementat
 
 **Purpose**: Core modification to enable dynamic school selection
 
-- [ ] T003 Replace hardcoded school loading in src/app/dashboard/page.tsx
-- [ ] T004 Add school list loading for Master users (GET /schools)
-- [ ] T005 Read schoolId from user profile for Director/Admin
+- [X] T003 Replace hardcoded school loading in src/app/dashboard/page.tsx
+- [X] T004 Add school list loading for Master users (GET /schools)
+- [X] T005 Read schoolId from user profile for Director/Admin
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -52,9 +52,9 @@ description: "Task list for School Selection by User Profile feature implementat
 
 ### Implementation for User Story 1
 
-- [ ] T006 [P] [US1] Modify dashboard form to show Select component for profileId=1 in src/app/dashboard/page.tsx
-- [ ] T007 [US1] Load all schools when user is Master
-- [ ] T008 [US1] Pass selected schoolId to form submission
+- [X] T006 [P] [US1] Modify dashboard form to show Select component for profileId=1 in src/app/dashboard/page.tsx
+- [X] T007 [US1] Load all schools when user is Master
+- [X] T008 [US1] Pass selected schoolId to form submission
 
 **Checkpoint**: User Story 1 complete - Master can select any school
 
@@ -68,9 +68,9 @@ description: "Task list for School Selection by User Profile feature implementat
 
 ### Implementation for User Story 2
 
-- [ ] T009 [P] [US2] Modify dashboard form to show disabled input for profileId=2 (Director/Admin) in src/app/dashboard/page.tsx
-- [ ] T010 [US2] Read school name from user's schoolId
-- [ ] T011 [US2] Auto-populate schoolId in form submission for Director
+- [X] T009 [P] [US2] Modify dashboard form to show disabled input for profileId=2 (Director/Admin) in src/app/dashboard/page.tsx
+- [X] T010 [US2] Read school name from user's schoolId
+- [X] T011 [US2] Auto-populate schoolId in form submission for Director
 
 **Checkpoint**: User Story 2 complete - Director sees fixed school
 
@@ -84,8 +84,8 @@ description: "Task list for School Selection by User Profile feature implementat
 
 ### Implementation for User Story 3
 
-- [ ] T012 [P] [US3] Add conditional rendering to hide form for profileId=3 in src/app/dashboard/page.tsx
-- [ ] T013 [US3] Verify form is hidden or user is redirected for Professor
+- [X] T012 [P] [US3] Add conditional rendering to hide form for profileId=3 in src/app/dashboard/page.tsx
+- [X] T013 [US3] Verify form is hidden or user is redirected for Professor
 
 **Checkpoint**: User Story 3 complete - Professor cannot create classes
 
@@ -93,9 +93,9 @@ description: "Task list for School Selection by User Profile feature implementat
 
 ## Phase 6: Polish & Cross-Cutting Concerns
 
-- [ ] T014 [P] Add empty state handling for Master when no schools available
-- [ ] T015 Add error handling for API failures in school loading
-- [ ] T016 [P] Final integration testing including accessibility audit (WCAG 2.1)
+- [X] T014 [P] Add empty state handling for Master when no schools available
+- [X] T015 Add error handling for API failures in school loading
+- [X] T016 [P] Final integration testing including accessibility audit (WCAG 2.1)
 
 ---
 

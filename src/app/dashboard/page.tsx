@@ -256,6 +256,8 @@ const validationSchema = Yup.object({
 export default function Home() {
     const [classes, setClasses] = useState([])
     const [school, setSchool] = useState<any>()
+    const [schools, setSchools] = useState<any[]>([])
+    const [selectedSchoolId, setSelectedSchoolId] = useState<number | null>(null)
     const [subjects, setSubjects] = useState<any[]>([])
     const [preSearch, setPreSearch] = useState('')
     const [search, setSerch] = useState('')
@@ -281,9 +283,10 @@ export default function Home() {
     const submit = handleSubmit(async (data) => {
             console.log(data)
             const {finishedAt, startAt, subject} = data;
+            const schoolId = user?.profileId === 1 ? selectedSchoolId : user?.schoolId;
             const payload = {
                 // @ts-ignore
-                schoolId: school?.id,
+                schoolId: schoolId,
                 subjectId: subject,
                 createdByd: user?.id,
                 statededAt: startAt,
@@ -344,13 +347,29 @@ export default function Home() {
         loadClasses();
     }, [loadClasses]);
     useEffect(() => {
-        api.get('/schools/1').then((data) => {
-            setSchool(data?.data)
-        }).catch(() => {})
         api.get('/subjects').then((data) => {
             setSubjects(data?.data || [])
         }).catch(() => {})
     }, []);
+
+    useEffect(() => {
+        if (!user) return;
+        
+        if (user.profileId === 1) {
+            api.get('/schools').then((data) => {
+                setSchools(data?.data || [])
+                if (data?.data?.length > 0) {
+                    setSelectedSchoolId(data.data[0].id)
+                    setSchool(data.data[0])
+                }
+            }).catch(() => {})
+        } else if (user.profileId === 2 && user.schoolId) {
+            api.get(`/schools/${user.schoolId}`).then((data) => {
+                setSchool(data?.data)
+                setSelectedSchoolId(user.schoolId)
+            }).catch(() => {})
+        }
+    }, [user]);
 
 
     const classesFiltered = useMemo(() => {
@@ -394,8 +413,26 @@ export default function Home() {
                                 all && user?.profileId != 3 && (
                                 <>
                                     <Form onSubmit={submit}>
-                                        <input
-                                            value={school?.name ?? 'Nome da Escola'} disabled={true} type={'text'}/>
+                                        {user?.profileId === 1 ? (
+                                            <select
+                                                value={selectedSchoolId || ''}
+                                                onChange={(e) => {
+                                                    const id = parseInt(e.target.value);
+                                                    setSelectedSchoolId(id);
+                                                    const selected = schools.find(s => s.id === id);
+                                                    if (selected) setSchool(selected);
+                                                }}
+                                            >
+                                                <option value="">Selecione a Escola</option>
+                                                {schools.map((s) => (
+                                                    <option key={s.id} value={s.id}>{s.name}</option>
+                                                ))}
+                                            </select>
+                                        ) : (
+                                            <input
+                                                value={school?.name ?? 'Nome da Escola'} disabled={true} type={'text'}
+                                            />
+                                        )}
                                         <label>
                                             <select
                                                 {...register("subject")}

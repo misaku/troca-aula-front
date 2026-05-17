@@ -1,0 +1,322 @@
+UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO
+
+
+
+
+Danilo Felix Portugal, 23201274
+Leandro Augusto Mioto da Silva, 2232298
+Lucas Mello Bergamo de Lima, 2217572
+Marcos Henrique Higashi, 2217044
+Michel dos Santos Kuguio, 23226486
+Pedro André Luiz Pena, 23214066
+Walter Mauricio dos Anjos, 23223669
+Wilian Fernando Moreira Felipe, 2212067
+
+
+
+Serviço de Gestão de Troca de Aulas via WEB
+
+
+
+
+Vídeo de apresentação do Projeto Integrador
+
+<https://www.youtube.com/watch?v=xWZov3HvWgw>
+
+<https://github.com/TROCA-AULA/troca-aula-backend>
+
+<https://github.com/TROCA-AULA/troca-aula-front>
+
+
+
+Jaboticabal - SP
+2026
+UNIVERSIDADE VIRTUAL DO ESTADO DE SÃO PAULO
+
+
+
+
+
+
+
+
+
+
+
+
+Serviço de Gestão de Troca de Aulas via WEB
+
+
+
+
+
+
+
+Relatório Técnico-Científico apresentado na disciplina de Projeto Integrador em Computação III - Universidade Virtual do Estado de São Paulo (UNIVESP).
+
+
+
+
+
+
+ Jaboticabal - SP
+	2026
+PORTUGAL, Danilo Felix; SILVA, Leandro Augusto Mioto; LIMA, Lucas Mello Bergamo; HIGASHI, Marcos Henrique; KUGUIO, Michel dos Santos; PENA, Pedro André Luiz; ANJOS, Walter Mauricio; FELIPE, Wilian Fernando Moreira. Serviço de Gestão de Troca de Aulas via WEB. 00f. Relatório Técnico-Científico. Projeto Integrador em Computação III- Universidade Virtual do Estado de São Paulo. Tutora: Giovana Da Costa Oliveira. Polo Jaboticabal, 2026.
+
+RESUMO
+Este trabalho apresenta a evolução de uma plataforma computacional dedicada ao gerenciamento de substituições de aulas em instituições de ensino, com o objetivo de otimizar a alocação docente e assegurar a continuidade pedagógica. Em 2026, o projeto expande o Mínimo Produto Viável (MVP) original — desenvolvido com NestJS, Node.js e TypeScript — para um ecossistema robusto e inclusivo. A metodologia fundamenta-se no framework Design Thinking, percorrendo as etapas de Imersão (Ouvir) para identificação das dores dos gestores, Ideação (Prototipar) para concepção de interfaces e Implementação via Prova de Conceito (PoC).
+As inovações implementadas contemplam diretamente os conceitos de Interface Humano-Computador (IHC) mediante a adoção de padrões de acessibilidade (WCAG), garantindo suporte a leitores de tela, contrastes otimizados e navegação integral via teclado. No âmbito de Infraestrutura para Sistemas de Software, realizou-se a migração para computação em nuvem com integração e entrega contínuas (CI/CD) automatizadas via GitHub Actions. Além da persistência em Banco de Dados PostgreSQL e documentação via Swagger, a solução consolidou a segurança através da API da Conta Gov.br. Os resultados, validados por testes automatizados (Jest), demonstram um incremento na inclusão digital e na escalabilidade administrativa da solução. Como visão de futuro, o projeto prevê a convergência com Internet das Coisas (IoT) para a validação automatizada de presença em tempo real.
+Este trabalho caracteriza-se como uma pesquisa aplicada, de abordagem qualitativa, com objetivo exploratório e descritivo.
+
+PALAVRAS-CHAVE: Gestão Escolar. Design Thinking. Acessibilidade (WCAG). Computação em Nuvem. Engenharia de Software.
+
+LISTA DE ILUSTRAÇÕES
+
+FIGURA 1: MODELAGEM RELACIONAL DO BANCO DE DADOS  	18
+FIGURA 2: PORTAL DE ACESSO E AUTENTICAÇÃO GOV.BR 	18
+FIGURA 3: GESTÃO DE VACÂNCIAS (PAINEL DO ADMINISTRADOR) 	19
+FIGURA 4: FLUXO DE APROVAÇÃO DE CANDIDATURAS DESCRIÇÃO	19
+FIGURA 5: INTERFACE DE CANDIDATURA DOCENTE (VISÃO ACESSÍVEL) 	20
+FIGURA 6: PIPELINE DE AUTOMAÇÃO CI/CD (GITHUB ACTIONS)	20
+FIGURA 7: DETALHAMENTO DE LOGS DE DEPLOY 	21
+FIGURA 8: DASHBOARD DA PLATAFORMA EM NUVEM (RENDER/RAILWAY) 	21
+
+
+
+
+
+
+
+
+
+
+SUMÁRIO
+
+
+1 INTRODUÇÃO	6
+2 DESENVOLVIMENTO	7
+2.1 OBJETIVOS	7
+2.1.1 OBJETIVO GERAL	7
+2.1.2 OBJETIVOS ESPECÍFICOS	7
+2.2.1 RELEVÂNCIA SOCIAL, CULTURAL E ACADÊMICA	9
+2.2.2 CONTRIBUIÇÕES PARA A INSTITUIÇÃO PARCEIRA	9
+2.3 FUNDAMENTAÇÃO TEÓRICA	10
+2.4 METODOLOGIA	12
+2.4.1 DEFINIÇÃO DO PRODUTO	12
+2.4.1.1 FUNCIONALIDADES PRINCIPAIS	13
+2.4.1.2 TIPOS DE USUÁRIOS	13
+2.4.2 ETAPAS DO PROJETO	14
+2.4.2.1 OUVIR E INTERPRETAR O CONTEXTO (Discovery)	14
+2.4.2.2 CRIAR E PROTOTIPAR (Ideação e Design)	14
+2.4.2.3 IMPLEMENTAR E TESTAR (Fase de Entrega)	15
+2.4.3 EVOLUÇÃO TECNOLÓGICA E ATUALIZAÇÕES ESTRATÉGICAS	16
+2.4.3.1 INTEROPERABILIDADE E VALIDAÇÃO DE CREDENCIAIS	16
+2.4.3.2 EXPANSÃO PARA ECOSSISTEMA MÓVEL (MOBILE)	16
+2.4.3.3 MECANISMOS DE GOVERNANÇA E CONTROLE DE LIMITES	17
+2.4.3.4 AUTENTICAÇÃO UNIFICADA E SEGURANÇA DIGITAL	17
+3 RESULTADOS: SOLUÇÃO FINAL	18
+3.1 OUVIR: DIAGNÓSTICO E VALIDAÇÃO DE DEMANDAS	18
+3.2 CRIAR: PROJETOS E ARQUITETURA DE EVOLUÇÃO	18
+3.3 IMPLEMENTAR: ENTREGA DO ECOSSISTEMA EVOLUÍDO	19
+3.4 VISÃO DE FUTURO: INTEGRAÇÃO COM INTERNET DAS COISAS (IoT)	19
+3.5 EVOLUÇÃO E REFINAMENTO PÓS-FEEDBACKS (CICLO 2026)	20
+3.6 REPRESENTAÇÕES VISUAIS DA SOLUÇÃO	21
+4 CONSIDERAÇÕES FINAIS	27
+REFERÊNCIAS	28
+
+
+1 INTRODUÇÃO
+O panorama educacional atual enfrenta desafios persistentes na gestão de ausências docentes, uma variável que impacta de forma direta a continuidade do processo de ensino-aprendizagem. Sistemas tradicionais de substituição, dependentes de processos manuais como contatos telefônicos e planilhas físicas, demonstram ineficiência operacional, demandando tempo excessivo das secretarias escolares e resultando na interrupção recorrente do calendário letivo. Diante deste cenário, este trabalho apresenta a evolução de uma plataforma digital estratégica, projetada para automatizar a identificação e a alocação de profissionais qualificados.
+O problema de pesquisa que orienta este estudo define-se como: de que maneira uma plataforma web escalável e acessível pode otimizar o processo de substituição de aulas, reduzindo a ocorrência de janelas vagas e aumentando a eficiência administrativa nas instituições de ensino? Para responder a essa questão, o desenvolvimento foi guiado pelo framework Design Thinking, partindo da fase de Imersão (Ouvir) para compreender as dores reais dos gestores, seguida pela Ideação (Prototipar) de interfaces inclusivas e pela Implementação técnica.
+A fundamentação técnica da solução baseia-se em uma arquitetura de API desenvolvida com o framework NestJS, utilizando Node.js e TypeScript, aplicando conceitos de Engenharia de Software por meio dos princípios SOLID e práticas de Clean Code. Enquanto o ciclo anterior validou a estabilidade do sistema e a persistência em Banco de Dados PostgreSQL, o estágio atual (2026) promove a transição para a disciplina de Infraestrutura para Sistemas de Software, integrando fluxos de CI/CD via GitHub Actions e computação em nuvem para assegurar a integridade do software por meio de testes automatizados.
+De acordo com Severino (2002), a utilização de metodologias estruturadas na pesquisa científica permite organizar o desenvolvimento de soluções tecnológicas com maior rigor acadêmico. No que tange à interface com o usuário, o desenvolvimento em React.js prioriza a disciplina de Interface Humano-Computador (IHC). O foco recai na acessibilidade digital, em conformidade com as diretrizes WCAG (Web Content Accessibility Guidelines), visando a inclusão plena de usuários com diferentes necessidades mediante contrastes otimizados e navegação por teclado. Adicionalmente, a implementação da autenticação unificada via API da Conta Gov.br eleva o padrão de segurança e confiabilidade do acesso.
+A motivação para o aprimoramento desta ferramenta reside na necessidade de modernização da gestão escolar, visando a eliminação de gargalos burocráticos e a garantia da continuidade pedagógica. Ao convergir infraestrutura escalável, inclusividade e integração governamental, este projeto busca fornecer uma solução tecnológica que promova a eficiência administrativa e a transparência nas instituições de ensino públicas e privadas.
+
+2 DESENVOLVIMENTO
+O desenvolvimento deste projeto fundamenta-se na necessidade de evolução tecnológica de uma ferramenta de gestão educacional, visando a transição de um protótipo funcional para uma solução robusta, acessível e integrada ao ecossistema de serviços governamentais. O processo foi guiado pelo framework Design Thinking, estruturado nas etapas de Ouvir (compreensão da dor do gestor), Prototipar (concepção da interface inclusiva) e Implementar (desenvolvimento técnico e deploy).
+2.1 OBJETIVOS
+2.1.1 OBJETIVO GERAL
+Projetar e evoluir uma plataforma digital dedicada à administração de substituições docentes, com o intuito de aperfeiçoar a alocação de profissionais e otimizar os fluxos operacionais em ambientes escolares por meio de automação e computação em nuvem.
+2.1.2 OBJETIVOS ESPECÍFICOS
+Mitigação de lacunas pedagógicas: Reduzir a incidência de aulas vagas para preservar a integridade do cronograma de ensino e a continuidade do aprendizado.
+Inclusividade e Acessibilidade (Interface Humano-Computador): Implementar padrões de acessibilidade digital WCAG, garantindo suporte a leitores de tela, navegação por teclado e contrastes adequados, aplicando conceitos da disciplina de IHC para promover inclusão total.
+Modernização da Infraestrutura (Sistemas de Software): Transicionar o sistema do ambiente local para uma arquitetura em nuvem (Render/Railway), utilizando fluxos de CI/CD via GitHub Actions para assegurar estabilidade, conforme os princípios de Infraestrutura para Sistemas de Software.
+Qualidade e Validação (Engenharia de Software): Garantir a confiabilidade da solução mediante a execução de testes automatizados com o framework Jest, validando as funcionalidades antes de cada entrega.
+Segurança e Interoperabilidade: Consolidar a autenticação unificada via API da Conta Gov.br e fornecer documentação técnica via Swagger para integração com sistemas institucionais.
+Gestão de Dados: Otimizar a persistência de informações de docentes e horários utilizando Banco de Dados PostgreSQL, garantindo a integridade e transparência para auditoria e controle.
+Inovação e Visão de Futuro (IoT): Documentar o potencial de integração com dispositivos de Internet das Coisas para a confirmação automatizada de presença via sensores em sala de aula.
+
+2.2 JUSTIFICATIVA E DELIMITAÇÃO DO PROBLEMA
+
+Sob a perspectiva acadêmica, o presente trabalho contribui para a área de Computação Aplicada à Educação ao propor uma solução baseada em tecnologias web modernas, alinhada às práticas de desenvolvimento ágil e acessibilidade digital. A administração eficaz da substituição docente constitui um desafio operacional persistente. A vacância de aulas compromete diretamente a fluidez do processo pedagógico, e a dependência de fluxos manuais resulta em um gasto elevado de tempo das secretarias escolares.
+A delimitação deste problema foi aprofundada através da fase de Imersão (Ouvir) do Design Thinking, onde identificou-se que, além da lentidão na busca por substitutos, a falta de acessibilidade nas ferramentas de gestão atuais exclui usuários e limita a transparência. Assim, a evolução desta plataforma visa modernizar esse cenário por meio da transição de um protótipo local para uma solução em nuvem, centralizando e automatizando a identificação de docentes substitutos.
+O aprimoramento proposto para o ciclo de 2026 foca na robustez técnica e na democratização do acesso. Para isso, aplicam-se conteúdos específicos da disciplina de Interface Humano-Computador (IHC), focando em diretrizes de acessibilidade para que a ferramenta seja resiliente e utilizável por todos os perfis de usuários. Simultaneamente, a migração para arquitetura de nuvem, pautada nos conceitos de Infraestrutura para Sistemas de Software, resolve o problema da disponibilidade limitada, permitindo que o sistema atue como uma solução WEB real e escalável. Portanto, a justificativa deste projeto reside na convergência entre a eficiência administrativa escolar e o cumprimento de requisitos técnicos de inclusão e modernização tecnológica.
+
+2.2.1 RELEVÂNCIA SOCIAL, CULTURAL E ACADÊMICA
+Sob a perspectiva social, o projeto assegura o direito fundamental à educação contínua, minimizando lacunas no aprendizado que ocorrem por faltas docentes. Através da etapa de Imersão (Ouvir) do Design Thinking, identificou-se que a exclusão digital era uma barreira; por isso, a introdução de padrões de acessibilidade WCAG amplia o impacto social, promovendo a inclusão de gestores e professores com deficiência e garantindo equidade no uso da tecnologia.
+No âmbito cultural, a ferramenta fomenta a integração profissional dos docentes substitutos, valorizando sua atuação ao inseri-los de forma organizada no ecossistema escolar. Academicamente, a solução preserva a qualidade do ensino ao facilitar que as aulas sejam conduzidas por profissionais aptos. Esta evolução aplica conhecimentos da disciplina de Interface Humano-Computador (IHC), demonstrando como o design centrado no usuário pode transformar a cultura organizacional de instituições de ensino.
+
+2.2.2 CONTRIBUIÇÕES PARA A INSTITUIÇÃO PARCEIRA
+Para a unidade de ensino colaboradora, a adoção desta versão evoluída do sistema representa um marco de inovação na gestão de recursos humanos. A implementação de uma arquitetura em nuvem (computação em nuvem), pautada nos conceitos de Infraestrutura para Sistemas de Software, garante que a plataforma esteja disponível de forma ininterrupta, eliminando as limitações do processamento local.
+A utilização de fluxos de CI/CD via GitHub Actions assegura que melhorias sejam implementadas sem indisponibilidade, enquanto a integração com a API Gov.br eleva o patamar de segurança institucional. Além disso, a automatização dos fluxos reduz a sobrecarga administrativa nas secretarias, permitindo que os gestores foquem em questões pedagógicas. Através da fase de Implementação do projeto, consolidou-se uma solução de alto nível que aprimora a gestão escolar e eleva o padrão do serviço educacional oferecido à comunidade.
+
+2.3 FUNDAMENTAÇÃO TEÓRICA
+A administração estratégica das substituições docentes é um elemento crítico para a manutenção da eficácia nas instituições de ensino. A literatura acadêmica reforça que a ausência de professores repercute diretamente na fluidez e no padrão de qualidade do processo educativo. Portanto, a implementação de mecanismos que atenuem esses efeitos é indispensável para a estabilidade do ambiente escolar.
+Nesse cenário, a gestão escolar assume papel determinante na estruturação de soluções. Para Libâneo (2004), a gestão compreende o conjunto de atividades de coordenação e acompanhamento do trabalho das pessoas, envolvendo decisões sobre planos e ações coletivas. Práticas como a organização de bancos de atividades emergenciais e o acolhimento de professores substitutos são estratégias recomendadas para minimizar danos pedagógicos (TAKADA; NICOLIELO et al., 2010). O gestor atua como o articulador principal entre as necessidades administrativas e o desenvolvimento pedagógico (GARCIA; MIRANDA, 2017).
+Para guiar a resolução desses problemas complexos, este projeto utiliza o framework Design Thinking. Segundo Brown (2020), essa abordagem centra-se no ser humano para integrar as necessidades das pessoas, as possibilidades da tecnologia e os requisitos para o sucesso do projeto. No contexto desta pesquisa, as fases de Imersão (Ouvir), Ideação (Prototipar) e Implementação permitiram que a solução evoluísse de um protótipo técnico para uma ferramenta que atende às dores reais da secretaria escolar, conforme preconizado pela metodologia ativa do Projeto Integrador.
+A qualidade da aprendizagem está conectada à eficiência da gestão educacional (WOLFF). Segundo Moran (2015), a integração de tecnologias digitais implica uma reconfiguração dos processos, tornando-os mais ágeis e transparentes. Nessa direção, a adoção de sistemas de informação permite a otimização de fluxos burocráticos (SILVA, 2025). No entanto, ressalta-se a importância da preparação dos gestores para que essa integração digital ocorra efetivamente (SANTOS; ROSA; WEBER, 2021).
+Do ponto de vista da disciplina de Engenharia de Software, a confiabilidade e a manutenibilidade são atributos fundamentais. Pressman e Maxim (2016) destacam que a qualidade está relacionada ao uso de arquiteturas modulares e testes automatizados — princípios que fundamentam o uso do framework NestJS, dos princípios SOLID e do Jest neste projeto. Adicionalmente, a migração para a nuvem fundamenta-se nos conceitos de Infraestrutura para Sistemas de Software, permitindo escalabilidade e disponibilidade contínua via CI/CD.
+No que concerne à disciplina de Interface Humano-Computador (IHC), as diretrizes WCAG (Web Content Accessibility Guidelines), publicadas pelo W3C (2018), estabelecem critérios que garantem a usabilidade por pessoas com diferentes necessidades. Torres, Mazzoni e Alves (2002) argumentam que a acessibilidade digital é condição sine qua non para a inclusão plena, especialmente em sistemas públicos.
+A convergência entre os referenciais de gestão (LIBÂNEO, 2004; LÜCK, 2009), a integração de TIC (MORAN, 2015), os princípios de qualidade de software (PRESSMAN; MAXIM, 2016) e os critérios de acessibilidade (W3C, 2018; TORRES; MAZZONI; ALVES, 2002) constitui a base teórica que orienta as decisões de design e arquitetura deste projeto. Esta articulação posiciona a solução como uma contribuição ao campo da Computação Aplicada à Educação.
+
+
+
+2.4 METODOLOGIA
+A estratégia metodológica adotada para a evolução do sistema fundamenta-se na convergência entre o framework Design Thinking e as práticas de Product Discovery. Enquanto o Discovery permitiu uma iteração contínua com os stakeholders para validar o valor e a viabilidade do produto no mercado de 2026, o Design Thinking estruturou o rigor acadêmico necessário para a resolução do problema.
+O processo foi dividido em três macrofases principais:
+Fase de Imersão e Ouvir (Discovery): Realizaram-se novas iterações com os gestores escolares para validar o problema sob a ótica das demandas tecnológicas atuais. Esta etapa de "escuta ativa" revelou que a prioridade não era apenas a funcionalidade técnica, mas a inclusão digital e a resiliência da infraestrutura.
+Fase de Ideação e Prototipar: Com base na análise das personas e de seus fluxos de interação, o grupo projetou interfaces focadas na disciplina de Interface Humano-Computador (IHC). O foco foi a concepção de um protótipo que atendesse aos requisitos WCAG, garantindo acessibilidade universal.
+Fase de Implementação: Nesta etapa, o sistema transicionou de um protótipo funcional para uma solução robusta em nuvem, aplicando conceitos de Infraestrutura para Sistemas de Software e Engenharia de Software.
+
+2.4.1 DEFINIÇÃO DO PRODUTO
+O sistema caracteriza-se como uma plataforma de gerenciamento de substituições docentes, estruturada sob a lógica de oferta e demanda de aulas vagas. A solução assegura a conformidade com as diretrizes institucionais ao monitorar o teto máximo de substituições por docente e gerenciar apenas profissionais previamente habilitados pela unidade de ensino.
+
+
+
+2.4.1.1 FUNCIONALIDADES PRINCIPAIS
+Administração de Vacâncias: Permite a abertura e o preenchimento de aulas substitutas por educadores qualificados.
+Monitoramento de Teto Operacional: Implementa mecanismos de controle para garantir que o limite de substituições permitido por professor não seja excedido.
+Acessibilidade Universal (IHC/WCAG): Garante que a interface seja plenamente operável via teclado e compatível com leitores de tela e tecnologias assistivas, seguindo as diretrizes WCAG.
+Interoperabilidade e Segurança: Integração com a API Gov.br para prover um acesso unificado e seguro, além de documentação técnica via Swagger para integração institucional.
+Infraestrutura em Nuvem (Cloud): Migração para ambiente escalável com fluxos de CI/CD via GitHub Actions, assegurando disponibilidade contínua.
+Delimitação Negativa: O sistema restringe-se exclusivamente à gestão de substituições, não se caracterizando como rede social, diário de classe eletrônico, controle de frequência regular ou sistema de lançamento de notas.
+
+2.4.1.2 TIPOS DE USUÁRIOS
+A arquitetura de permissões do sistema divide-se em três perfis fundamentais:
+Docentes: Possuem autonomia para cadastrar dados profissionais, registrar aulas vagas próprias ou candidatar-se às oportunidades de substituição.
+Agentes Administrativos: Atuam na gestão operacional, com privilégios para visualizar, editar ou remover registros de aulas vagas no sistema.
+Corpo Diretivo: Responsáveis pela governança da plataforma, incluindo a aprovação de professores e a validação final das substituições realizadas.
+
+
+2.4.2 ETAPAS DO PROJETO
+O ciclo de desenvolvimento em 2026 seguiu a evolução do MVP original, aplicando o framework Design Thinking aliado a práticas contínuas de Product Discovery para garantir que a solução técnica permanecesse alinhada às necessidades reais do mercado educacional.
+
+2.4.2.1 OUVIR E INTERPRETAR O CONTEXTO (Discovery)
+Nesta fase inicial de imersão, o foco foi validar a viabilidade da evolução tecnológica. Através de uma abordagem de Discovery, conduzimos uma Prova de Conceito (PoC) para mapear as novas fronteiras do projeto:
+Coleta de Informações: Realizaram-se entrevistas e enquetes com professores, diretores e agentes administrativos para coletar dados qualitativos sobre as "dores" da versão anterior, com foco especial em barreiras de acessibilidade e disponibilidade do sistema.
+Perfil dos Participantes: A amostra incluiu usuários reais do ecossistema escolar, permitindo uma análise profunda das políticas institucionais que regem o teto de substituições docentes.
+Diagnóstico: O resultado desta fase apontou a necessidade crítica de transição para a nuvem e a implementação de padrões inclusivos, fundamentando a relevância social do projeto.
+
+2.4.2.2 CRIAR E PROTOTIPAR (Ideação e Design)
+Com base nos requisitos coletados, procedeu-se à elaboração de fluxos de usuários e protótipos navegáveis, onde a teoria se converteu em arquitetura técnica:
+Design de Interface (IHC): As interfaces foram projetadas sob a ótica da disciplina de Interface Humano-Computador, submetendo o layout a uma análise rigorosa de acessibilidade (WCAG). Isso garantiu que o design contemplasse contrastes adequados, navegação por teclado e compatibilidade com tecnologias assistivas, validando a experiência do usuário (UX) antes da codificação.
+Arquitetura de Software: A solução estruturou-se sobre uma API RESTful modular, aplicando princípios de Engenharia de Software (SOLID) para assegurar a escalabilidade.
+Modelagem de Dados (Banco de Dados): O esquema de dados foi normalizado em PostgreSQL, escolha estratégica para garantir a integridade referencial em instâncias de nuvem. A utilização de um ORM (Object-Relational Mapping) conferiu a flexibilidade necessária para gerenciar as entidades de forma eficiente.
+Infraestrutura e Nuvem: O protótipo evoluiu para um ambiente de computação em nuvem, onde a arquitetura de deploy foi planejada para suportar fluxos de CI/CD, garantindo que a "ideação" se tornasse um produto digital disponível via WEB real.
+
+2.4.2.3 IMPLEMENTAR E TESTAR (Fase de Entrega)
+Nesta etapa final do framework Design Thinking, o projeto transicionou da ideação para a construção de uma solução WEB real e escalável. O desenvolvimento técnico foi executado utilizando o framework NestJS com Node.js e TypeScript, permitindo uma estrutura orientada a objetos pautada na disciplina de Engenharia de Software. Além das funcionalidades base, a implementação de 2026 integrou:
+Módulo de Acessibilidade (IHC): Execução prática dos protótipos acessíveis, com foco em navegação por teclado e suporte a leitores de tela em todas as visões do sistema.
+Autenticação Integrada: Configuração do fluxo de acesso via API Gov.br, elevando o nível de segurança e padronização governamental.
+Infraestrutura em Nuvem e CI/CD: Aplicação de conceitos da disciplina de Infraestrutura para Sistemas de Software, com a configuração de pipelines no GitHub Actions para automação de builds e deploys em plataformas de nuvem (Render/Railway).
+Ciclo de Testes e Confiabilidade: Diferente da abordagem exclusivamente manual do ciclo anterior, a fase de testes atual incorporou o rigor técnico de testes automatizados utilizando o framework Jest. Foram realizados "Smoke Tests" (testes de fumaça) para garantir que as funcionalidades críticas, como o cadastro de aulas e a validação de limites docentes, operem corretamente após cada deploy. O feedback contínuo dos usuários finais (etapa de validação do Design Thinking) norteou o refinamento das interfaces, assegurando uma solução tecnicamente resiliente e inclusiva.
+
+2.4.3 EVOLUÇÃO TECNOLÓGICA E ATUALIZAÇÕES ESTRATÉGICAS
+Com o intuito de elevar a maturidade da plataforma e atender aos requisitos de um sistema de gestão pública moderno, foram delineadas frentes de atualização que compõem o ciclo de 2026.
+
+2.4.3.1 INTEROPERABILIDADE E VALIDAÇÃO DE CREDENCIAIS
+Objetivo: Estabelecer um mecanismo de confiança para assegurar que apenas profissionais habilitados operem no sistema.
+Implementação: Integração com o Catálogo de APIs Governamentais para a validação automatizada de credenciais docentes, substituindo a conferência manual de documentos por um fluxo de dados seguro em tempo real. Esta ação reflete a busca por Segurança da Informação e eficiência administrativa.
+
+2.4.3.2 EXPANSÃO PARA ECOSSISTEMA MÓVEL (MOBILE)
+Objetivo: Ampliar a portabilidade e a agilidade na resposta às demandas de substituição através da onipresença digital.
+Implementação: Com base nos aprendizados da disciplina de Desenvolvimento para Dispositivos Móveis, propõe-se a criação de uma aplicação utilizando o framework React Native, integrada à API REST existente. O foco desta evolução, validado na fase de Ideação do Design Thinking, é fornecer notificações push em tempo real sobre aulas vagas. Isso permite que o docente realize candidaturas e atualizações de perfil com uma interface otimizada para dispositivos portáteis, respeitando rigorosamente os critérios de acessibilidade (IHC) definidos no projeto.
+
+2.4.3.3 MECANISMOS DE GOVERNANÇA E CONTROLE DE LIMITES
+Objetivo: Garantir a estrita observância das normas institucionais quanto à carga horária de substituição.
+Implementação: Utilizando conceitos avançados de Engenharia de Software, foi desenvolvida uma lógica de negócio no backend (NestJS) para o monitoramento automático do teto de aulas permitido por docente. O sistema implementa mecanismos de controle que emitem alertas preventivos e bloqueiam novas candidaturas caso o limite de substituições esteja próximo da exaustão. Esta funcionalidade assegura a transparência e a auditabilidade do processo, transformando regras burocráticas em fluxos de dados automatizados.
+
+2.4.3.4 AUTENTICAÇÃO UNIFICADA E SEGURANÇA DIGITAL
+Objetivo: Consolidar um padrão de acesso seguro, simplificado e reconhecido nacionalmente.
+Implementação: No âmbito da disciplina de Segurança da Informação, realizou-se a transição do modelo de autenticação convencional para a integração com o sistema de login único do governo federal, via Conta Gov.br. Esta atualização, pautada em protocolos de identidade digital consolidados (OAuth2/OpenID Connect), não apenas simplifica a jornada do usuário (UX), mas também eleva o nível de proteção de dados sensíveis e a confiabilidade institucional da plataforma.
+
+
+3 RESULTADOS: SOLUÇÃO FINAL
+A solução final consolidada neste projeto consiste em um ecossistema digital robusto para a gestão estratégica de substituições docentes. A evolução do sistema, orientada pela metodologia de Design Thinking e práticas de Product Discovery, permitiu a transição de um protótipo experimental para uma aplicação escalável, inclusiva e operando em ambiente de produção (Cloud).
+
+3.1 OUVIR: DIAGNÓSTICO E VALIDAÇÃO DE DEMANDAS
+Nesta fase de imersão, conduziram-se novas rodadas de entrevistas e enquetes com o corpo docente e administrativo. O foco deslocou-se da simples identificação de aulas vagas para a compreensão de barreiras de acesso e segurança. Os resultados do Discovery indicaram que a eficácia da gestão dependia de dois pilares:
+Confiabilidade: Necessidade de uma autenticação oficial e segura.
+Inclusividade: Uma interface que não excluísse profissionais com limitações visuais ou motoras. Estes achados fundamentaram a implementação dos padrões de acessibilidade e da integração com a API Gov.br.
+
+3.2 CRIAR: PROJETOS E ARQUITETURA DE EVOLUÇÃO
+Com base nos feedbacks, os protótipos foram refinados sob a ótica da disciplina de Interface Humano-Computador (IHC). O design de interface passou a incluir componentes que respeitam rigorosamente as diretrizes WCAG. No backend, a arquitetura de dados no PostgreSQL foi otimizada para suportar o tráfego em nuvem, garantindo a integridade referencial. O desenho da solução foi estruturado de forma modular (Princípios SOLID), permitindo futuras expansões para o ecossistema móvel e integração com catálogos de diplomas.
+3.3 IMPLEMENTAR: ENTREGA DO ECOSSISTEMA EVOLUÍDO
+A implementação resultou em uma solução tecnológica de alta fidelidade, operando integralmente em ambiente de computação em nuvem (Render/Railway). As funcionalidades entregues compreendem:
+Autenticação e Segurança: Acesso unificado via API Gov.br, elevando o padrão de segurança digital e simplificando o acesso do servidor público.
+Gestão de Vacâncias e Candidaturas: Painel administrativo dinâmico para criação de aulas vagas e interface otimizada para candidaturas docentes em tempo real.
+Acessibilidade Aplicada (IHC): Interface com suporte a alto contraste, navegação assistida por teclado e plena compatibilidade com leitores de tela.
+Infraestrutura e CI/CD: Deploy automatizado via GitHub Actions, aplicando conceitos de Infraestrutura para Sistemas de Software para garantir que a plataforma permaneça disponível e estável após cada atualização.
+
+3.4 VISÃO DE FUTURO: INTEGRAÇÃO COM INTERNET DAS COISAS (IoT)
+Como diferencial estratégico e prova de conceito para expansões futuras, o projeto documentou a viabilidade de integração com tecnologias de Internet das Coisas (IoT). A proposta envolve a utilização de sensores de presença, dispositivos RFID ou QR Codes dinâmicos instalados nas salas de aula.
+Através desta integração, fundamentada nos conceitos da disciplina de Protocolos de Comunicação IoT, o sistema seria capaz de validar a presença do professor substituto em tempo real. A "baixa" da aula vaga no sistema ocorreria de forma automatizada via comunicação entre o hardware e a API em nuvem assim que a presença fosse detectada fisicamente. Esta inovação visa eliminar falhas humanas de registro, aumentar a transparência na prestação de contas e fornecer dados estatísticos precisos sobre a ocupação das salas, transformando o ambiente escolar em uma Smart School.
+
+3.5 EVOLUÇÃO E REFINAMENTO PÓS-FEEDBACKS (CICLO 2026)
+Durante o desenvolvimento do ecossistema, foram conduzidas sessões de demonstração com os stakeholders para validar os protótipos de alta fidelidade e a nova arquitetura em nuvem. Embora o sistema original de 2025 apresentasse funcionalidades básicas, as interações deste novo ciclo (fase de Validação do Design Thinking) forneceram insights críticos que direcionaram a solução para um patamar de maturidade institucional.
+As principais evoluções implementadas, fundamentadas no feedback da comunidade e nos requisitos técnicos do PI-III, compreendem:
+Implementação de Acessibilidade Digital (IHC/WCAG): A interface foi reestruturada para garantir inclusão plena. Com base na disciplina de Interface Humano-Computador, ajustaram-se os contrastes cromáticos e a hierarquia de componentes para permitir a navegação integral via teclado e a compatibilidade com leitores de tela.
+Otimização da Experiência do Usuário (UX/UI): Simplificaram-se os fluxos de candidatura e criação de aulas. A reorganização dos elementos visou reduzir a carga cognitiva, tornando a interação intuitiva, seguindo as Heurísticas de Nielsen.
+Consolidação do Painel de Transparência: Desenvolvimento de um dashboard centralizado que permite aos docentes o acompanhamento do status de candidaturas e saldo de aulas, respeitando os limites automáticos de carga horária programados no backend.
+Governança e Validação Institucional: Aprimorou-se a funcionalidade de auditoria para o corpo diretivo. O sistema agora integra dados para relatórios de conformidade administrativa, aplicando princípios de Engenharia de Software para garantir a consistência das informações.
+Estabilidade via CI/CD e Cloud: A transição para a hospedagem em nuvem permitiu que os feedbacks fossem implementados e validados automaticamente via GitHub Actions. Isso garantiu que as melhorias solicitadas pelos usuários fossem integradas sem comprometer a estabilidade das funções já existentes.
+
+3.6 REPRESENTAÇÕES VISUAIS DA SOLUÇÃO
+As figuras a seguir documentam a arquitetura evoluída e as interfaces da plataforma, destacando a aplicação prática dos conceitos de Interface Humano-Computador (IHC), a infraestrutura em nuvem e a automação de processos.
+
+Figura 1: Modelagem Relacional do Banco de Dados Descrição: Diagrama de Entidade-Relacionamento (DER) normalizado e implementado em PostgreSQL. A estrutura garante a integridade referencial entre as tabelas de usuários, aulas e candidaturas, suportando a lógica de teto operacional de substituições.
+
+Figura 2: Portal de Acesso e Autenticação Gov.br Descrição: Interface de login destacando o botão de autenticação via API da Conta Gov.br. A página já reflete os padrões de acessibilidade WCAG, com contraste otimizado e labels claros para leitores de tela.
+
+Figura 3: Gestão de Vacâncias (Painel do Administrador) Descrição: Interface voltada aos agentes administrativos para a abertura de novas aulas vagas, permitindo o preenchimento de metadados como disciplina, horário e requisitos específicos.
+
+Figura 4: Fluxo de Aprovação de Candidaturas Descrição: Visão do Corpo Diretivo para validação final dos docentes que se candidataram às aulas, permitindo a auditoria e o controle institucional das substituições.
+
+Figura 5: Interface de Candidatura Docente (Visão Acessível) Descrição: Painel onde o professor visualiza e aceita aulas vagas. A interface foi otimizada para reduzir a carga cognitiva, aplicando as Heurísticas de Nielsen (Disciplina: IHC).
+Figura 6: Pipeline de Automação CI/CD (GitHub Actions) Descrição: Fluxo de integração contínua configurado para realizar o build e os testes automatizados (Jest) a cada novo commit, garantindo a estabilidade da versão em produção.
+
+
+Figura 7: Detalhamento de Logs de Deploy Descrição: Visão técnica dos processos de automação, comprovando a execução bem-sucedida dos testes de fumaça (Smoke Tests) antes da atualização da plataforma.
+
+
+Figura 8: Dashboard da Plataforma em Nuvem (Render/Railway) Descrição: Painel de monitoramento da aplicação hospedada em ambiente de computação em nuvem, demonstrando a transição do ambiente local para uma solução WEB real e escalável (Disciplina: Infraestrutura para Sistemas de Software).
+
+
+
+
+4 CONSIDERAÇÕES FINAIS
+O presente Projeto Integrador teve como premissa a evolução de uma plataforma computacional para a gestão estratégica de substituições docentes, com o intuito de mitigar a vacância de aulas e otimizar a alocação de profissionais em instituições de ensino. A metodologia fundamentou-se na convergência entre o framework Design Thinking e práticas de Product Discovery, percorrendo ciclos de Imersão (Ouvir), Ideação (Prototipar) e Implementação em ambiente de nuvem.
+Durante a fase de diagnóstico e atualização em 2026, a reiteração com os stakeholders permitiu expandir o escopo original, identificando a urgência de requisitos de acessibilidade e segurança digital. Essas interações foram determinantes para a aplicação de conceitos da disciplina de Interface Humano-Computador (IHC) através da implementação de padrões WCAG, e para a integração com a API Gov.br, elevando a solução de um protótipo local para um sistema de padrão institucional inclusivo.
+A entrega final consolidou um ecossistema funcional que opera integralmente em computação em nuvem, com suporte a CI/CD e testes automatizados via Jest. As funcionalidades implementadas demonstram que a aplicação dos princípios de Engenharia de Software (SOLID) e de Infraestrutura para Sistemas de Software resultou em uma arquitetura escalável e resiliente, pronta para a expansão em múltiplas unidades escolares. A comparação entre a solução inicial (2025) e a final (2026) revela um salto qualitativo em termos de disponibilidade, segurança da informação e democratização do acesso.
+As contribuições deste projeto residem na oferta de uma ferramenta que garante a continuidade pedagógica e promove a inclusão digital. Como limitações, observa-se a necessidade de testes de carga em cenários de escala massiva e a conclusão da integração plena com o ecossistema móvel.
+O impacto projetado na comunidade externa é a modernização da gestão de recursos humanos na educação, reduzindo drasticamente a incidência de aulas vagas. Por fim, a inclusão da visão de futuro sobre Internet das Coisas (IoT) para validação de presença reforça o compromisso deste trabalho com a inovação contínua, demonstrando que a colaboração estreita com os usuários finais e a fundamentação acadêmica interdisciplinar são os alicerces para o desenvolvimento de soluções tecnológicas de alto impacto social.
+REFERÊNCIAS
+
+BRITO, M. de L. et al. Integração das Tecnologias Digitais da Informação e Comunicação com a Prática da Gestão Escolar: um Estudo de Caso. Revista de Ensino, Educação e Ciências Humanas, v. 25, n. 1, p. 74–80, 14 mar. 2024.
+BROWN, Tim. Design Thinking: uma metodologia poderosa para decretar o fim das velhas ideias. Rio de Janeiro: Alta Books, 2020.
+GARCIA, P. S.; MIRANDA, N. A. D. A gestão escolar e a formação docente: um estudo em escolas de um município paulista. [S. l.], 2017. Disponível em: https://www.researchgate.net/publication/321786916_A_gestao_escolar_e_a_formacao_docente_um_estudo_em_escolas_de_um_municipio_paulista. Acesso em: 9 abr. 2025.
+LIBÂNEO, J. C. Organização e gestão da escola: teoria e prática. 5. ed. Goiânia: Alternativa, 2004.
+LÜCK, H. Dimensões de gestão escolar e suas competências. Curitiba: Positivo, 2009.
+MORAN, J. M. A educação que desejamos: novos desafios e como chegar lá. 5. ed. Campinas: Papirus, 2015.
+PEREIRA, P. As tecnologias jamais vão substituir os professores. Educação em Pauta, 2025. Disponível em: https://sinepe-rs.org.br/educacaoempauta/com-a-palavra/as-tecnologias-jamais-vao-substituir-os-professores/. Acesso em: 9 abr. 2025.
+PRESSMAN, R. S.; MAXIM, B. R. Engenharia de software: uma abordagem profissional. 8. ed. Porto Alegre: AMGH, 2016.
+SANTOS, L. M. dos; ROSA, D. C. da; WEBER, C. Gestão escolar e as tecnologias de Informação: desafios e possibilidades. Uma Nova Pedagogia para a Sociedade Futura, p. 116–127, 1 jan. 2021.
+SEVERINO, A. J. Metodologia do trabalho científico. 22. ed. São Paulo: Cortez, 2002.
+SILVA, P. C. da S. Tecnologias na gestão escolar: inovações e desafios no contexto educacional contemporâneo. Revista Di Fatto, 2025. Disponível em: https://revistadifatto.com.br/artigos/tecnologias-na-gestao-escolar-inovacoes-e-desafios-no-contexto-educacional-contemporaneo/. Acesso em: 9 abr. 2025.
+TAKADA, P.; NICOLIELO, B. et al. Para garantir uma boa substituição. Gestão Escolar, 2025. Disponível em: https://gestaoescolar.org.br/conteudo/204/para-garantir-uma-boa-substituicao. Acesso em: 9 abr. 2025.
+TORRES, E. F.; MAZZONI, A. A.; ALVES, J. B. da M. A acessibilidade à informação no espaço digital. Ciência da Informação, Brasília, v. 31, n. 3, p. 83–91, 2002.
+W3C – WORLD WIDE WEB CONSORTIUM. Web Content Accessibility Guidelines (WCAG) 2.1. 2018. Disponível em: https://www.w3.org/TR/WCAG21/. Acesso em: 12 maio 2026.
+
+
+
+

@@ -77,7 +77,7 @@
 - **FR-004**: O sistema DEVE ocultar o formulário de criação de aula para usuários com perfil Professor (profileId=3)
 - **FR-005**: O sistema DEVE enviar o schoolId correto no payload de criação de aula baseado no perfil do usuário
 - **FR-006**: O sistema DEVE obter a lista de escolas via endpoint GET /schools
-- **FR-003**: O sistema DEVE obter os dados do usuário logado (incluindo schoolId e profileId) via endpoint GET /auth/me
+- **FR-007**: O sistema DEVE obter os dados do usuário logado (incluindo schoolId e profileId) via endpoint GET /auth/me
 
 ### Key Entities
 

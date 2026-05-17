@@ -1,50 +1,72 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Troca-Aula Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Acessibilidade Universal (WCAG)
+Toda interface deve ser acessível seguindo diretrizes WCAG 2.1. Isso inclui: navegação por teclado completa, contraste adequado, suporte a leitores de tela, e Labels claros. A acessibilidade não é opcional — é requisito fundamental para garantir inclusão de todos os perfis de usuários.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Arquitetura Modular (Separation of Concerns)
+Cada funcionalidade deve seguir a estrutura de arquivos separada: Service (API), Hook (Controller/lógica), Component (View), e Style. Um componente não deve conter tudo no mesmo arquivo. Essa separação garante manutenibilidade e testabilidade.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Test-First (NÃO NEGOCIÁVEL)
+Antes de implementar qualquer funcionalidade, os testes devem ser escritos. Segue o ciclo Red-Green-Refactor: teste falha → implementação passa → refatoração. Testes são obrigatória para funcionalidades críticas (autenticação, gestão de vacâncias, controle de teto).
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Padrão de Componentes (Component Standards)
+Componentes devem seguir convenção: arquivo de estilo (styled-components), arquivo de lógica (hook), arquivo de estrutura (component). Não colocar estilos inline, usar sempre styled-components. Nomes de componentes em PascalCase.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Simplicity First (YAGNI)
+Prefira soluções simples e funcionais sobre soluções complexas perfeitas. "Simples bemfeito é melhor que complexo perfeito." Evite over-engineering. Comece pequeno, itere conforme necessidade.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+### VI. Visualização com Mermaid (NÃO NEGOCIÁVEL)
+Toda especificação (spec), plano e tasks deve incluir diagramas Mermaid quando a complexidade exigir compreensão de fluxos. Diagramas devem ser usados para: fluxos de usuário, sequências de API, máquinas de estado, e arquitetura de componentes. diagrams como ferramenta de compreensão, não de decoração — devem ajudar na execução.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Technology Stack
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+**Frontend**: Next.js 15, React 18+, TypeScript
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+**Package Manager**: pnpm
+
+**Node Version**: 22.x (gerenciado via nvm)
+
+**Styling**: styled-components
+
+**Testing**: Jest + React Testing Library
+
+**API Client**: Axios com interceptors
+
+**Authentication**: Gov.br API Integration
+
+**Quality**: ESLint, Prettier, commitlint (Conventional Commits)
+
+## Development Workflow
+
+**Arquitetura de Componentes**:
+- `*.service.tsx` — chamadas API e integração
+- `use*.ts` ou `use*.tsx` — hooks de lógica (controllers)
+- `*.tsx` (dentro de pasta) — componente visual
+- `*.styles.ts` ou styled no mesmo arquivo — estilização
+
+**Estrutura de Diretórios**:
+```
+src/
+├── app/              # Next.js App Router (páginas e layouts)
+│   └── components/  # Componentes de apresentação
+├── services/         # Services de API (futuro)
+├── hooks/            # Hooks de lógica (futuro)
+└── lib/              # Utilitários e configurações
+```
+
+**Commits**: Seguir Conventional Commits via commitlint. Exemplos: `feat:`, `fix:`, `docs:`, `refactor:`
+
+**Feature Branch**: `###-feature-name` (issue number + descrição)
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Esta constituição estabelece as regras fundamentais do projeto. Qualquer alteração deve seguir o processo:
+1. Proposta documentada no PR
+2. Revisão de código obrigatória
+3. Verificação de compliance com princípios
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+Todas as implementações devem respeitar os princípios de acessibilidade, arquitetura modular e test-first. Complexidade adicional deve ser explicitamente justificada.
+
+**Version**: 1.1.0 | **Ratified**: 2026-05-16 | **Last Amended**: 2026-05-16

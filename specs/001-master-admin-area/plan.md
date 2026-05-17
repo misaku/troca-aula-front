@@ -140,3 +140,64 @@ Research completado com sucesso. Decisões de implementação baseadas nas tecno
 Executar `/speckit.tasks` para gerar as tarefas de implementação, ou prosseguir diretamente para desenvolvimento.
 
 **Nota**: Esta é uma feature de frontend que consome API existente do backend. Não há necessidade de contracts externos para sistemas terceiros.
+
+---
+
+## Diagrams
+
+### Architecture Overview
+
+```mermaid
+flowchart TB
+    subgraph Frontend
+        A[Master Layout] --> B[Dashboard]
+        A --> C[Escolas CRUD]
+        A --> D[Diretores CRUD]
+        A --> E[Administradores CRUD]
+    end
+    
+    subgraph API
+        F[/schools] --> G[Backend]
+        H[/users] --> G
+    end
+    
+    I[useUserHook] --> A
+    
+    B --> F
+    C --> F
+    D --> H
+    E --> H
+    
+    G --> I[auth JWT]
+```
+
+### Component Structure
+
+```mermaid
+flowchart LR
+    subgraph Service Layer
+        S1[master.service.tsx]
+    end
+    
+    subgraph Hook Layer
+        H1[useMasterDashboard.ts]
+        H2[useSchools.ts]
+        H3[useUsers.ts]
+    end
+    
+    subgraph View Layer
+        V1[MasterLayout]
+        V2[DashboardPage]
+        V3[EscolasPage]
+        V4[DiretoresPage]
+        V5[AdministradoresPage]
+    end
+    
+    S1 --> H1
+    S1 --> H2
+    S1 --> H3
+    H1 --> V1
+    H2 --> V3
+    H3 --> V4
+    H3 --> V5
+```

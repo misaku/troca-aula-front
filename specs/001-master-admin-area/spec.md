@@ -174,4 +174,41 @@
 
 ---
 
+---
+
+## Diagrams
+
+### User Flow - Access Control
+
+```mermaid
+flowchart TD
+    A[Login] --> B{profileId?}
+    B -->|1| C[Master: /master]
+    B -->|2| D[Redirect /dashboard]
+    B -->|3| D
+    B -->|4| D
+    C --> E[Sidebar Navigation]
+    E --> F[Dashboard]
+    E --> G[Escolas]
+    E --> H[Diretores]
+    E --> I[Administradores]
+```
+
+### CRUD Flow - Escolas
+
+```mermaid
+flowchart LR
+    A[Lista Escolas] --> B[+Nova Escola]
+    B --> C[Form: nome, limite]
+    C --> D{Validação}
+    D -->|Inválido| E[Erro]
+    D -->|Válido| F[POST /schools]
+    F --> G{Sucesso?}
+    G -->|Sim| H[Toast: Sucesso]
+    G -->|Não| I[Toast: Erro API]
+    H --> J[Atualiza Lista]
+```
+
+---
+
 **Version**: 1.0.1

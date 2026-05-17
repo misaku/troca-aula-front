@@ -52,7 +52,7 @@
 ### User Story 3 - Gerenciar Diretores (Priority: P1)
 
 **Como** usuário Master,
-**Eu quero** criar, visualizar, editar e desvincular diretores,
+**Eu quero** criar, visualizar e desvincular diretores,
 **Para que** eu possa manter o cadastro dos diretores vinculados às escolas.
 
 **Why this priority**: Os diretores são responsáveis pela governança das escolas e precisam estar vinculados às suas respectivas instituições.
@@ -71,7 +71,7 @@
 ### User Story 4 - Gerenciar Administradores (Priority: P1)
 
 **Como** usuário Master,
-**Eu quero** criar, visualizar, editar e desvincular administradores,
+**Eu quiero** criar, visualizar e desvincular administradores,
 **Para que** eu possa manter o cadastro dos administradores vinculados às escolas.
 
 **Why this priority**: Os administradores são responsáveis pela operação das substituições nas escolas.
@@ -145,7 +145,7 @@
 ### Measurable Outcomes
 
 - **SC-001**: Usuários Master podem acessar a área administrativa em até 2 segundos após login
-- **SC-002**: O sistema impede acesso de usuários não-Master à área administrativa com 100% de eficácia
+- **SC-002**: O sistema impede acesso de usuários não-Master à área administrativa — todas as requisições de usuários com profileId ≠ 1 para /master retornam redirect (302) para /dashboard
 - **SC-003**: Todas as operações CRUD de escolas resultam em feedback visual em até 1 segundo
 - **SC-004**: O dashboard exibe dados atualizados ao carregar a página (sem atualização automática)
 

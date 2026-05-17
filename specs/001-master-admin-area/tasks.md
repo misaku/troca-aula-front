@@ -25,9 +25,9 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create master route directory structure in src/app/master/
-- [ ] T002 [P] Create shared component directories if needed
-- [ ] T003 Create type definitions for the feature in src/types/master.ts
+- [x] T001 Create master route directory structure in src/app/master/
+- [x] T002 [P] Create shared component directories if needed
+- [x] T003 Create type definitions for the feature in src/types/master.ts
 
 ---
 
@@ -37,10 +37,10 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 [P] Create master API service layer in src/services/master.service.tsx
-- [ ] T005 [P] Create master hooks directory and base useMaster.ts hook
-- [ ] T006 Setup MasterLayout component structure in src/app/master/page.tsx
-- [ ] T007 Implement route protection for /master in MasterLayout
+- [x] T004 [P] Create master API service layer in src/services/master.service.tsx
+- [x] T005 [P] Create master hooks directory and base useMaster.ts hook
+- [x] T006 Setup MasterLayout component structure in src/app/master/page.tsx
+- [x] T007 Implement route protection for /master in MasterLayout
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -52,14 +52,21 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Independent Test**: Login with different profileIds and verify only profileId=1 can access /master
 
+### Tests for User Story 1 (Test-First REQUIRED - Constitution III) ⚠️
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [x] T008T [P] [US1] Write unit tests for route protection logic in tests/unit/master/routeProtection.test.ts
+- [x] T008I [US1] Write integration test for Master access flow in tests/integration/master/accessControl.test.ts
+
 ### Implementation for User Story 1
 
-- [ ] T008 [P] [US1] Create MasterSidebar component in src/app/master/components/MasterSidebar.tsx
-- [ ] T009 [P] [US1] Create MasterHeader component in src/app/master/components/MasterHeader.tsx
-- [ ] T010 [US1] Implement route protection in src/app/master/page.tsx using useUserHook
-- [ ] T011 [US1] Add navigation links to sidebar (Dashboard, Escolas, Diretores, Administradores)
-- [ ] T012 [US1] Add redirect to /dashboard for non-Master users in src/app/master/page.tsx
-- [ ] T013 [US1] Add keyboard navigation and WCAG 2.1 compliance to layout components
+- [x] T008 [P] [US1] Create MasterSidebar component in src/app/master/components/MasterSidebar.tsx
+- [x] T009 [P] [US1] Create MasterHeader component in src/app/master/components/MasterHeader.tsx
+- [x] T010 [US1] Implement route protection in src/app/master/page.tsx using useUserHook
+- [x] T011 [US1] Add navigation links to sidebar (Dashboard, Escolas, Diretores, Administradores)
+- [x] T012 [US1] Add redirect to /dashboard for non-Master users in src/app/master/page.tsx
+- [x] T013 [US1] Add keyboard navigation and WCAG 2.1 compliance to layout components
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -71,18 +78,25 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Independent Test**: Create a school, verify it appears in list, edit it, delete it with confirmation
 
+### Tests for User Story 2 (Test-First REQUIRED - Constitution III) ⚠️
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [x] T014T [P] [US2] Write unit tests for useSchools hook in tests/unit/hooks/useSchools.test.ts
+- [x] T014I [US2] Write integration test for schools CRUD flow in tests/integration/master/schools.test.ts
+
 ### Implementation for User Story 2
 
-- [ ] T014 [P] [US2] Create useSchools hook in src/hooks/useSchools.ts
-- [ ] T015 [P] [US2] Create SchoolsPage component in src/app/master/escolas/page.tsx
-- [ ] T016 [US2] Implement list schools table in src/app/master/escolas/page.tsx
-- [ ] T017 [US2] Create SchoolForm modal component in src/app/master/escolas/components/SchoolForm.tsx
-- [ ] T018 [US2] Implement create school functionality with react-hook-form + yup validation
-- [ ] T019 [US2] Implement edit school functionality in SchoolForm.tsx
-- [ ] T020 [US2] Create ConfirmModal component in src/components/ConfirmModal.tsx
-- [ ] T021 [US2] Implement delete school with confirmation modal
-- [ ] T022 [US2] Add toast notifications for success/error feedback
-- [ ] T023 [US2] Handle edge case: prevent delete if school has users linked (show error)
+- [x] T014 [P] [US2] Create useSchools hook in src/hooks/useSchools.ts
+- [x] T015 [P] [US2] Create SchoolsPage component in src/app/master/escolas/page.tsx
+- [x] T016 [US2] Implement list schools table in src/app/master/escolas/page.tsx
+- [x] T017 [US2] Create SchoolForm modal component in src/app/master/escolas/components/SchoolForm.tsx
+- [x] T018 [US2] Implement create school functionality with react-hook-form + yup validation
+- [x] T019 [US2] Implement edit school functionality in SchoolForm.tsx
+- [x] T020 [US2] Create ConfirmModal component in src/components/ConfirmModal.tsx
+- [x] T021 [US2] Implement delete school with confirmation modal
+- [x] T022 [US2] Add toast notifications for success/error feedback
+- [x] T023 [US2] Handle edge case: prevent delete if school has users linked (show error)
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -94,16 +108,22 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Independent Test**: Create a director linked to a school, verify appears in list, unlink from school
 
+### Tests for User Story 3 (Test-First REQUIRED - Constitution III) ⚠️
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [x] T024T [P] [US3] Write unit tests for useUsers hook in tests/unit/hooks/useUsers.test.ts
+
 ### Implementation for User Story 3
 
-- [ ] T024 [P] [US3] Create useUsers hook in src/hooks/useUsers.ts (reusable for directors/admins)
-- [ ] T025 [P] [US3] Create DiretoresPage component in src/app/master/diretores/page.tsx
-- [ ] T026 [US3] Implement list directors table filtered by profileId=2
-- [ ] T027 [US3] Create UserForm modal component in src/app/master/diretores/components/UserForm.tsx
-- [ ] T028 [US3] Implement create director with school selection dropdown
-- [ ] T029 [US3] Implement unlink director functionality (remove schoolId, keep user)
-- [ ] T030 [US3] Add toast notifications for success/error feedback
-- [ ] T031 [US3] Handle edge case: email already exists (show API error message)
+- [x] T024 [P] [US3] Create useUsers hook in src/hooks/useUsers.ts (reusable for directors/admins)
+- [x] T025 [P] [US3] Create DiretoresPage component in src/app/master/diretores/page.tsx
+- [x] T026 [US3] Implement list directors table filtered by profileId=2
+- [x] T027 [US3] Create UserForm modal component in src/app/master/diretores/components/UserForm.tsx
+- [x] T028 [US3] Implement create director with school selection dropdown
+- [x] T029 [US3] Implement unlink director functionality (remove schoolId, keep user)
+- [x] T030 [US3] Add toast notifications for success/error feedback
+- [x] T031 [US3] Handle edge case: email already exists (show API error message)
 
 **Checkpoint**: At this point, User Stories 1, 2, AND 3 should work independently
 
@@ -115,15 +135,21 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Independent Test**: Create an admin linked to a school, verify appears in list, unlink from school
 
+### Tests for User Story 4 (Test-First REQUIRED - Constitution III) ⚠️
+
+> **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
+
+- [x] T032T [P] [US4] Write integration test for administrators flow in tests/integration/master/administrators.test.ts
+
 ### Implementation for User Story 4
 
-- [ ] T032 [P] [US4] Reuse useUsers hook from US3
-- [ ] T033 [P] [US4] Create AdministradoresPage component in src/app/master/administradores/page.tsx
-- [ ] T034 [US4] Implement list administrators table filtered by profileId=3
-- [ ] T035 [US4] Reuse UserForm component from US3 for creating admins
-- [ ] T036 [US4] Implement create administrator with school selection (profileId=3)
-- [ ] T037 [US4] Implement unlink administrator functionality
-- [ ] T038 [US4] Add toast notifications for success/error feedback
+- [x] T032 [P] [US4] Reuse useUsers hook from US3
+- [x] T033 [P] [US4] Create AdministradoresPage component in src/app/master/administradores/page.tsx
+- [x] T034 [US4] Implement list administrators table filtered by profileId=3
+- [x] T035 [US4] Reuse UserForm component from US3 for creating admins
+- [x] T036 [US4] Implement create administrator with school selection (profileId=3)
+- [x] T037 [US4] Implement unlink administrator functionality
+- [x] T038 [US4] Add toast notifications for success/error feedback
 
 **Checkpoint**: At this point, User Stories 1-4 should work independently
 
@@ -137,13 +163,13 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 ### Implementation for User Story 5
 
-- [ ] T039 [P] [US5] Create useMasterDashboard hook in src/hooks/useMasterDashboard.ts
-- [ ] T040 [P] [US5] Create StatCard component in src/components/StatCard.tsx
-- [ ] T041 [US5] Create DashboardPage in src/app/master/dashboard/page.tsx
-- [ ] T042 [US5] Fetch and display total schools count (GET /schools)
-- [ ] T043 [US5] Fetch and display available classes count (GET /classes?available=true)
-- [ ] T044 [US5] Fetch and display substitutions this month (GET /enrollment-requests?status=APPROVED)
-- [ ] T045 [US5] Add loading and error states to dashboard
+- [x] T039 [P] [US5] Create useMasterDashboard hook in src/hooks/useMasterDashboard.ts
+- [x] T040 [P] [US5] Create StatCard component in src/components/StatCard.tsx
+- [x] T041 [US5] Create DashboardPage in src/app/master/dashboard/page.tsx
+- [x] T042 [US5] Fetch and display total schools count (GET /schools)
+- [x] T043 [US5] Fetch and display available classes count (GET /classes?available=true)
+- [x] T044 [US5] Fetch and display substitutions this month (GET /enrollment-requests?status=APPROVED)
+- [x] T045 [US5] Add loading and error states to dashboard
 
 **Checkpoint**: All user stories should now be independently functional
 
@@ -153,11 +179,11 @@ description: "Task list for Área Administrativa Master feature implementation"
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T046 [P] Add responsive styles for mobile/tablet views
-- [ ] T047 Run accessibility audit (keyboard nav, contrast, screen readers)
-- [ ] T048 Code cleanup: extract repeated logic into shared utilities
-- [ ] T049 Add unit tests for critical hooks (useMasterDashboard, useSchools, useUsers)
-- [ ] T050 Update documentation in quickstart.md with final implementation details
+- [x] T046 [P] Add responsive styles for mobile/tablet views
+- [x] T047 Run accessibility audit (keyboard nav, contrast, screen readers)
+- [x] T048 Code cleanup: extract repeated logic into shared utilities
+- [x] T049 Run final integration tests and fix any issues
+- [x] T050 Update documentation in quickstart.md with final implementation details
 
 ---
 

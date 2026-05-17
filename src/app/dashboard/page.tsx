@@ -311,7 +311,7 @@ export default function Home() {
 
     const accept = (id: any)=>async () => {
         const payload = {
-            registredById: user?.id,
+            enrolledById: user?.id,
         }
         try {
             await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
@@ -382,13 +382,13 @@ export default function Home() {
     const classesFiltered = useMemo(() => {
         if (all === 'classes') {
             // @ts-ignore
-            return classes.filter(item => item?.registredById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+            return classes.filter(item => item?.enrolledById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
         }
         // @ts-ignore
-        if (user?.profileId === 3) return classes.filter(item => item?.registredById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        if (user?.profileId === 3) return classes.filter(item => item?.enrolledById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
 
         // @ts-ignore
-        return classes.filter(item => item?.registredById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        return classes.filter(item => item?.enrolledById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
     }, [all, classes, search, user])
     return (<>
             <Header>
@@ -514,14 +514,14 @@ export default function Home() {
                                             <td>{item?.school?.name}</td>
                                             <td>{format(new Date(item?.statededAt), 'dd/MM/yyyy HH:mm:ss')}</td>
                                             <td>{format(new Date(item?.finishedAt), 'dd/MM/yyyy HH:mm:ss')}</td>
-                                            {user?.profileId != 3 && (<td>{item?.registredBy?.name}</td>)}
+                                            {user?.profileId != 3 && (<td>{item?.enrolledBy?.name}</td>)}
                                             <td>
                                                 {user?.profileId == 3 ?
-                                                    (!item?.registredBy && (<button onClick={accept(item?.id)}>aceitar</button>)) :
+                                                    (!item?.enrolledBy && (<button onClick={accept(item?.id)}>aceitar</button>)) :
                                                     (
                                                         <>
                                                             {
-                                                                !item?.registredBy ? (
+                                                                !item?.enrolledBy ? (
                                                                     <button onClick={deleteData(item?.id)}>deletar</button>
                                                                 ) : (
                                                                     !item?.approvedById && (<button onClick={aprove(item?.id)}>aprovar</button>)

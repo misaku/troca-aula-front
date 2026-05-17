@@ -50,7 +50,7 @@ describe('Dashboard Page', () => {
             school: { name: 'School A' },
             statededAt: '2023-01-01T10:00:00Z',
             finishedAt: '2023-01-01T11:00:00Z',
-            registredById: null,
+            enrolledById: null,
         },
         {
             id: 2,
@@ -58,8 +58,8 @@ describe('Dashboard Page', () => {
             school: { name: 'School B' },
             statededAt: '2023-01-01T12:00:00Z',
             finishedAt: '2023-01-01T13:00:00Z',
-            registredById: 1,
-            registredBy: { name: 'Test User' },
+            enrolledById: 1,
+            enrolledBy: { name: 'Test User' },
         },
     ];
 
@@ -95,7 +95,7 @@ describe('Dashboard Page', () => {
         render(<Home />);
 
         await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
-        expect(screen.queryByRole('cell', { name: 'Science' })).not.toBeInTheDocument(); // registredById != null is hidden in "Aulas Disponiveis"
+        expect(screen.queryByRole('cell', { name: 'Science' })).not.toBeInTheDocument(); // enrolledById != null is hidden in "Aulas Disponiveis"
 
         const myClassesButton = screen.getByText('Aulas aceitas');
         fireEvent.click(myClassesButton);

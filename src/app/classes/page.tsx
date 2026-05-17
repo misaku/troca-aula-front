@@ -1,0 +1,159 @@
+'use client';
+import styled from 'styled-components';
+import { useUserHook } from '@/user/useUserHook';
+import { useEnrollments } from '@/hooks/useEnrollments';
+import { useEnrollmentMutations } from '@/hooks/useEnrollment';
+import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { format } from 'date-fns';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 60px);
+  padding: 20px;
+`;
+
+const Title = styled.h1`
+  color: #509BA1;
+  font-size: 24px;
+  margin-bottom: 20px;
+`;
+
+const ClassesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+`;
+
+const ClassCard = styled.div`
+  background: #fff;
+  border: 1px solid #f4f4f4;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+const ClassInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const ClassLabel = styled.span`
+  font-size: 12px;
+  color: #989a9a;
+  text-transform: uppercase;
+`;
+
+const ClassValue = styled.span`
+  font-size: 16px;
+  color: #333;
+`;
+
+const ApplyButton = styled.button`
+  background-color: #509BA1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #6EC3C9;
+  }
+
+  &:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+`;
+
+const Loading = styled.div`
+  color: #509BA1;
+  text-align: center;
+  padding: 40px;
+`;
+
+const ErrorMessage = styled.div`
+  color: #f00;
+  text-align: center;
+  padding: 20px;
+`;
+
+export default function ClassesPage() {
+  const { user, isLoading: userLoading } = useUserHook();
+  const router = useRouter();
+  const { classes, loading, error, refetch } = useEnrollments();
+  const { createEnrollment, loading: creating } = useEnrollmentMutations();
+
+  if (userLoading) {
+    return <Loading>Carregando...</Loading>;
+  }
+
+  if (!user) {
+    router.push('/login');
+    return null;
+  }
+
+  if (user.profileId === 1) {
+    router.push('/master');
+    return null;
+  }
+
+  const handleApply = async (classId: number) => {
+    try {
+      await createEnrollment({ classId });
+      toast.success('Candidatura enviada com sucesso!');
+      refetch();
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Erro ao enviar candidatura';
+      toast.error(message);
+    }
+  };
+
+  if (loading) {
+    return <Loading>Carregando aulas disponíveis...</Loading>;
+  }
+
+  if (error) {
+    return <ErrorMessage>{error}</ErrorMessage>;
+  }
+
+  return (
+    <Wrapper>
+      <Title>Aulas Disponíveis</Title>
+      {classes.length === 0 ? (
+        <p>Nenhuma aula disponível no momento.</p>
+      ) : (
+        <ClassesGrid>
+          {classes.map((classItem) => (
+            <ClassCard key={classItem.id}>
+              <ClassInfo>
+                <ClassLabel>Disciplina</ClassLabel>
+                <ClassValue>{classItem.subjectName || `Aula #${classItem.id}`}</ClassValue>
+              </ClassInfo>
+              <ClassInfo>
+                <ClassLabel>Data</ClassLabel>
+                <ClassValue>{format(new Date(classItem.date), 'dd/MM/yyyy HH:mm')}</ClassValue>
+              </ClassInfo>
+              <ApplyButton
+                onClick={() => handleApply(classItem.id)}
+                disabled={creating || !classItem.available}
+              >
+                {classItem.available ? 'Candidatar-se' : 'Indisponível'}
+              </ApplyButton>
+            </ClassCard>
+          ))}
+        </ClassesGrid>
+      )}
+    </Wrapper>
+  );
+}

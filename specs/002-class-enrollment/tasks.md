@@ -25,8 +25,8 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 **Purpose**: Type definitions and service layer infrastructure
 
-- [ ] T001 Create type definitions for enrollment in src/types/enrollment.ts
-- [ ] T002 [P] Create enrollment service layer in src/services/enrollment.service.tsx
+- [X] T001 Create type definitions for enrollment in src/types/enrollment.ts
+- [X] T002 [P] Create enrollment service layer in src/services/enrollment.service.tsx
 
 ---
 
@@ -36,9 +36,9 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T003 [P] Create useEnrollments hook for listing enrollments in src/hooks/useEnrollments.ts
-- [ ] T004 [P] Create useEnrollment mutations hook in src/hooks/useEnrollment.ts
-- [ ] T005 Setup existing class page to add "Candidatar-se" button in src/app/classes/page.tsx
+- [X] T003 [P] Create useEnrollments hook for listing enrollments in src/hooks/useEnrollments.ts
+- [X] T004 [P] Create useEnrollment mutations hook in src/hooks/useEnrollment.ts
+- [X] T005 Setup existing class page to add "Candidatar-se" button in src/app/classes/page.tsx
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -59,10 +59,10 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 ### Implementation for User Story 1
 
-- [ ] T006 [P] [US1] Create EnrollmentCard component for class list in src/components/EnrollmentCard.tsx
-- [ ] T007 [US1] Add "Candidatar-se" button to existing class cards with apply logic
-- [ ] T008 [US1] Add toast notification for success/error feedback
-- [ ] T009 [US1] Handle backend validation errors (limite, conflito, vínculo)
+- [X] T006 [P] [US1] Create EnrollmentCard component for class list in src/components/EnrollmentCard.tsx
+- [X] T007 [US1] Add "Candidatar-se" button to existing class cards with apply logic
+- [X] T008 [US1] Add toast notification for success/error feedback
+- [X] T009 [US1] Handle backend validation errors (limite, conflito, vínculo)
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -76,11 +76,11 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 ### Implementation for User Story 2
 
-- [ ] T010 [P] [US2] Create MyEnrollments page in src/app/minhas-aulas/page.tsx
-- [ ] T011 [US2] Implement list of enrollments filtered by current user
-- [ ] T012 [US2] Add "Cancelar" button for PENDING enrollments only
-- [ ] T013 [US2] Implement cancel logic (PATCH /enrollment-requests/:id/cancel)
-- [ ] T014 [US2] Add toast notification and list refresh after cancel
+- [X] T010 [P] [US2] Create MyEnrollments page in src/app/minhas-aulas/page.tsx
+- [X] T011 [US2] Implement list of enrollments filtered by current user
+- [X] T012 [US2] Add "Cancelar" button for PENDING enrollments only
+- [X] T013 [US2] Implement cancel logic (PATCH /enrollment-requests/:id/cancel)
+- [X] T014 [US2] Add toast notification and list refresh after cancel
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should work independently
 
@@ -94,13 +94,13 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 ### Implementation for User Story 3
 
-- [ ] T015 [P] [US3] Create Enrollments management component for dashboard in src/components/EnrollmentsList.tsx
-- [ ] T016 [US3] Add "Candidaturas" tab/section to existing dashboard
-- [ ] T017 [US3] List only PENDING enrollments for the school
-- [ ] T018 [US3] Add "Aprovar" button with PATCH /enrollment-requests/:id/approve
-- [ ] T019 [US3] Add "Rejeitar" button with PATCH /enrollment-requests/:id/reject (optional reason)
-- [ ] T020 [US3] Verify available=false when enrollment is approved
-- [ ] T021 [US3] Add toast notification and refresh after each action
+- [X] T015 [P] [US3] Create Enrollments management component for dashboard in src/components/EnrollmentsList.tsx
+- [X] T016 [US3] Add "Candidaturas" tab/section to existing dashboard
+- [X] T017 [US3] List only PENDING enrollments for the school
+- [X] T018 [US3] Add "Aprovar" button with PATCH /enrollment-requests/:id/approve
+- [X] T019 [US3] Add "Rejeitar" button with PATCH /enrollment-requests/:id/reject (optional reason)
+- [X] T020 [US3] Verify available=false when enrollment is approved
+- [X] T021 [US3] Add toast notification and refresh after each action
 
 **Checkpoint**: At this point, User Stories 1, 2, AND 3 should work independently
 
@@ -114,9 +114,9 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 ### Implementation for User Story 4
 
-- [ ] T022 [P] [US4] Add status filter tabs to MyEnrollments page
-- [ ] T023 [US4] Filter enrollments by status (ALL, PENDING, APPROVED, REJECTED, CANCELLED)
-- [ ] T024 [US4] Hide "Cancelar" button for APPROVED status
+- [X] T022 [P] [US4] Add status filter tabs to MyEnrollments page
+- [X] T023 [US4] Filter enrollments by status (ALL, PENDING, APPROVED, REJECTED, CANCELLED)
+- [X] T024 [US4] Hide "Cancelar" button for APPROVED status
 
 **Checkpoint**: At this point, User Stories 1-4 should work independently
 
@@ -130,8 +130,8 @@ description: "Task list for Sistema de Candidaturas de Aulas feature implementat
 
 ### Implementation for User Story 5
 
-- [ ] T025 [P] [US5] Add tabs to dashboard enrollments: Pendentes, Aprovadas, Rejeitadas
-- [ ] T026 [US5] Filter and display enrollments by status
+- [X] T025 [P] [US5] Add tabs to dashboard enrollments: Pendentes, Aprovadas, Rejeitadas
+- [X] T026 [US5] Filter and display enrollments by status
 
 **Checkpoint**: All user stories should now be independently functional
 

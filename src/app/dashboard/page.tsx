@@ -9,6 +9,7 @@ import api from "@/api.service";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {toast} from "react-toastify";
 import {useUserHook} from "@/user/useUserHook";
+import {EnrollmentsList} from "@/components/EnrollmentsList";
 import axios from "axios";
 
 const Wrapper = styled.div`
@@ -258,7 +259,7 @@ export default function Home() {
     const [subjects, setSubjects] = useState<any[]>([])
     const [preSearch, setPreSearch] = useState('')
     const [search, setSerch] = useState('')
-    const [all, setAll] = useState<boolean>(true)
+    const [all, setAll] = useState<'classes' | 'myclasses' | 'enrollments'>('classes')
 
     const {register, handleSubmit, formState} = useForm({
         resolver: yupResolver(validationSchema),
@@ -378,14 +379,15 @@ export default function Home() {
                     <Card>
 
                         <TabHeader>
-                            <button className={all ? 'active' : 'inactive'} onClick={() => setAll(true)}>Aulas
-                                Disponiveis
+                            <button className={all === 'classes' ? 'active' : 'inactive'} onClick={() => setAll('classes')}>Aulas Disponiveis</button>
+                            <button className={all === 'myclasses' ? 'active' : 'inactive'} onClick={() => setAll('myclasses')}>
+                                {user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'}
                             </button>
-                            <button className={!all ? 'active' : 'inactive'} onClick={() => setAll(false)}>
-                                {        // @ts-ignore
-                                    user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'
-                                }
-                            </button>
+                            {user?.profileId == 2 && (
+                                <button className={all === 'enrollments' ? 'active' : 'inactive'} onClick={() => setAll('enrollments')}>
+                                    Candidaturas
+                                </button>
+                            )}
                         </TabHeader>
                         <CardContent>
                             {        // @ts-ignore
@@ -427,7 +429,12 @@ export default function Home() {
                                 </>
                             )}
 
+                            {all === 'enrollments' && (
+                                <EnrollmentsList schoolId={school?.id} />
+                            )}
 
+                            {all !== 'enrollments' && (
+                            <>
                             <header>
                                 <Search>
                                     <input placeholder={'Pesquisar'} value={preSearch} type={'text'}
@@ -479,6 +486,8 @@ export default function Home() {
                                     </tbody>
                                 </table>
                             </Content>
+                            </>
+                            )}
                         </CardContent>
 
                     </Card>

@@ -380,7 +380,7 @@ export default function Home() {
 
 
     const classesFiltered = useMemo(() => {
-        if (all) {
+        if (all === 'classes') {
             // @ts-ignore
             return classes.filter(item => item?.registredById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
         }

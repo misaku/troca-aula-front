@@ -53,6 +53,7 @@ const navItems = [
   { label: 'Escolas', href: '/master/escolas' },
   { label: 'Diretores', href: '/master/diretores' },
   { label: 'Administradores', href: '/master/administradores' },
+  { label: 'Professores', href: '/master/professores' },
 ];
 
 export function MasterSidebar() {

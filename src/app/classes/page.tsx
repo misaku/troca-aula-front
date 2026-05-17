@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useUserHook } from '@/user/useUserHook';
 import { useEnrollments } from '@/hooks/useEnrollments';
 import { useEnrollmentMutations } from '@/hooks/useEnrollment';
+import { useSubstitutionLimit } from '@/hooks/useSubstitutionLimit';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
 import { format } from 'date-fns';
@@ -93,6 +94,11 @@ export default function ClassesPage() {
   const router = useRouter();
   const { classes, loading, error, refetch } = useEnrollments();
   const { createEnrollment, loading: creating } = useEnrollmentMutations();
+  
+  const { canApply, loading: limitLoading, current, limit } = useSubstitutionLimit(
+    user?.id,
+    user?.schoolId
+  );
 
   if (userLoading) {
     return <Loading>Carregando...</Loading>;
@@ -109,6 +115,10 @@ export default function ClassesPage() {
   }
 
   const handleApply = async (classId: number) => {
+    if (!canApply) {
+      toast.error(`Não é possível se candidatar. Limite de ${limit} substituições atingido para este semestre.`);
+      return;
+    }
     try {
       await createEnrollment({ classId });
       toast.success('Candidatura enviada com sucesso!');
@@ -146,9 +156,10 @@ export default function ClassesPage() {
               </ClassInfo>
               <ApplyButton
                 onClick={() => handleApply(classItem.id)}
-                disabled={creating || !classItem.available}
+                disabled={creating || !classItem.available || !canApply}
+                title={!canApply ? `Limite de ${limit} substituições atingido` : undefined}
               >
-                {classItem.available ? 'Candidatar-se' : 'Indisponível'}
+                {classItem.available ? (!canApply ? 'Limite atingido' : 'Candidatar-se') : 'Indisponível'}
               </ApplyButton>
             </ClassCard>
           ))}

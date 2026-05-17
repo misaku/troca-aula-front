@@ -10,6 +10,8 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {toast} from "react-toastify";
 import {useUserHook} from "@/user/useUserHook";
 import {EnrollmentsList} from "@/components/EnrollmentsList";
+import {SubstitutionCounter} from "@/components/SubstitutionCounter";
+import {useSubstitutionLimit} from "@/hooks/useSubstitutionLimit";
 import axios from "axios";
 
 const Wrapper = styled.div`
@@ -268,6 +270,11 @@ export default function Home() {
     });
 
     const {user, logout, refreshUserData} = useUserHook();
+    
+    const { current, limit, percentage, canApply, loading: limitLoading } = useSubstitutionLimit(
+        user?.profileId === 3 ? user?.id : undefined,
+        user?.profileId === 3 ? user?.schoolId : undefined
+    );
 
     const loadClasses = useCallback(() => {
         axios.get(`/api/classes`, {
@@ -387,6 +394,14 @@ export default function Home() {
             <Header>
                 <Logo size={60}/>
                 <div className={'profile'}>
+                    {user?.profileId === 3 && user?.schoolId && (
+                        <SubstitutionCounter 
+                            current={current} 
+                            limit={limit} 
+                            percentage={percentage}
+                            loading={limitLoading}
+                        />
+                    )}
                     <p>
                         Olá, {user?.name}
                     </p>

@@ -18,7 +18,7 @@ O sistema precisa de uma área administrativa completa para o usuário Master ge
    - PROFESSOR (ID 4): Pertence a uma escola específica
 
 2. **Gestão de Escolas**:
-   - Uma escola tem: nome, substitutionLimitPerSemester (limite de substituições por semestre)
+   - Uma escola tem: nome, substitutionLimitPerDay (limite de horas de substituições por dia)
    - Escola pode ter múltiplos diretores e administradores vinculados
 
 3. **Gestão de Usuários**:
@@ -284,40 +284,38 @@ O frontend não exibe o limite de substituições do professor nem trata erros q
 
 2. **Erro do Backend**:
    - Quando professor atinge o limite, API retorna erro 400
-   - Mensagem: "Limite de substituições atingido para este semestre (X limite)"
+   - Mensagem: "Limite de substituições atingido para hoje (X horas limite)"
 
 3. **Cálculo do Contador**:
-   - Contagem de aulas com status APPROVED no semestre atual
+   - Contagem de horas de aulas com status APPROVED no dia atual
 
 ### Layout - Dashboard do Professor
 
 **Área "Meu Status"** (sidebar ou header):
 ```
-🟢 Substituições este semestre: 3 de 10
+🟢 Substituições hoje: 3 horas de 4
 ```
 - Se não tem limite: "Sem limite definido"
-- Se perto do limite (80%): "🟡 Atenção: 8 de 10"
+- Se perto do limite (80%): "🟡 Atenção: 3.2 de 4 horas"
 - Se atingiu: "🔴 Limite atingido"
 
 ### Comportamento
 
 1. **Ao carregar dashboard do professor**:
-   - Buscar limite da escola: GET /schools/{id} → substitutionLimitPerSemester
-   - Contar substituições do professor no semestre
+- Buscar limite da escola: GET /schools/{id} → substitutionLimitPerDay
 
-2. **Ao tentar candidatar-se**:
-   - Se atingiu limite: bloquear candidatura + mostrar toast de erro
-   - Se próximo (80%): mostrar aviso, mas permitir
+- Contar horas de substituições do professor no dia
 
-3. **Erro da API**:
-   - Se API retornar erro de limite, exibir toast específico
-   - Mensagem: "Não é possível se candidatar. Limite de substituições atingido para este semestre."
+- Se atingiu limite: bloquear candidatura + mostrar toast de erro
+
+- Se API retornar erro de limite, exibir toast específico
+- Mensagem: "Não é possível se candidatar. Limite de horas de substituições atingido para hoje."
 
 ### Endpoints
 
 ```typescript
 GET /schools/:id                    // Retorna substitutionLimitPerSemester
-GET /enrollment-requests?userId=X&status=APPROVED&semestre=atual  // Contagem
+GET /enrollment-requests?userId=X&status=APPROVED&data=hoje  // Contagem de horas
 ```
 
 ### Critérios de Aceite

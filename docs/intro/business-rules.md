@@ -175,6 +175,6 @@ O Sistema Troca Aula é uma plataforma digital destinada a gerenciar o processo 
 
 1. **Criação de aulas vagas**: Professores ou agentes administrativos cadastram ausências
 2. **Busca e candidatura**: Professores visualizam e se candidatam a vagas
-3. **Controle de limite**: Sistema monitora o teto de substituições por professor
+3. **Controle de limite**: Sistema monitora o teto de horas de substituições por dia por professor
 4. **Aprovação**: Diretores validam substituição
 5. **Histórico**: Registro completo de todas as substituições

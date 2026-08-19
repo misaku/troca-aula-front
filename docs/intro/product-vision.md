@@ -146,7 +146,7 @@ Focado exclusivamente na gestão de substituições docentes.
 |-------|-----------|
 | **Aula Vaga** | Aula que ficou sem professor porque o titular precisa se ausentar |
 | **Candidatura** | Ato de um professor se voluntariar para preencher uma aula vaga |
-| **Teto de Substituições** | Número máximo de aulas que um professor pode substituir em um período |
+| **Teto de Substituições** | Número máximo de horas que um professor pode substituir por dia |
 | **Aprovação** | Ato do diretor validar e confirmar que uma substituição pode ocorrer |
 | **Habilitação** | Condição de um professor estar qualificado para ensinar determinada disciplina |
 | **Enrollment** | Registro de inscrição de um professor em uma aula vaga |

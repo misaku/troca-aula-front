@@ -80,9 +80,9 @@ flowchart LR
 
 - **Status**: ❌ Não implementado
 - **Descrição**: O frontend não exibe o limite de substituições nem trata erros.
-- **API**: O backend retorna erro "Limite de substituições atingido para este semestre"
-- **Melhorias necessárias**:
-  - Exibir "X de Y substituições este semestre" no dashboard do professor
+- **API**: O backend retorna erro "Limite de substituições atingido para hoje"
+
+  - Exibir "X de Y horas de substituições hoje" no dashboard do professor
   - Tratar erro de limite com mensagem clara
   - Exibir alerta quando próximo do limite
 

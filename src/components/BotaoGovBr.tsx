@@ -2,14 +2,14 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { authService } from '@/services/auth.service';
 
-// Usamos o && para forçar que o nosso estilo mande mais que o do page.tsx
 const BotaoContainer = styled.button`
   && {
     background-color: #1351B4; 
     color: #FFFFFF;
     border: none;
-    border-radius: 5px; /* Deixei 5px para combinar com os outros campos da tela */
+    border-radius: 5px;
     padding: 12px 24px;
     font-size: 14px;
     font-weight: bold;
@@ -18,7 +18,7 @@ const BotaoContainer = styled.button`
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 10px; /* Um espacinho para descolar do botão Cadastrar */
+    margin-top: 10px;
     transition: background-color 0.2s;
 
     &:hover {
@@ -28,8 +28,19 @@ const BotaoContainer = styled.button`
 `;
 
 export function BotaoGovBr() {
+  const handleClick = async () => {
+    try {
+      const { url } = await authService.getGovbrAuthUrl();
+      if (url) {
+        window.location.href = url;
+      }
+    } catch (error) {
+      console.error('Erro ao iniciar autenticação Gov.br', error);
+    }
+  };
+
   return (
-    <BotaoContainer onClick={() => alert('Em breve: Redirecionamento para o Gov.br!')}>
+    <BotaoContainer onClick={handleClick} aria-label="Entrar com Gov.br">
       Entrar com gov.br
     </BotaoContainer>
   );

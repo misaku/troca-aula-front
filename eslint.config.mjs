@@ -10,6 +10,9 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: ["node_modules/**", "dist/**", "build/**", "coverage/**", "*.min.js"],
+  },
   // Mantém as extensões padrões do Next.js
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 

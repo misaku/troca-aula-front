@@ -17,13 +17,19 @@ vi.mock('@/api.service', () => ({
     },
 }));
 
-vi.mock('axios', () => ({
-    default: {
+vi.mock('axios', () => {
+    const mockAxios = {
         get: vi.fn(),
         patch: vi.fn(),
         delete: vi.fn(),
-    },
-}));
+        interceptors: {
+            request: { use: vi.fn() },
+            response: { use: vi.fn() },
+        },
+    };
+    mockAxios.create = vi.fn().mockReturnValue(mockAxios);
+    return { default: mockAxios };
+});
 
 vi.mock('react-toastify', () => ({
     toast: {
@@ -44,7 +50,7 @@ describe('Dashboard Page', () => {
             school: { name: 'School A' },
             statededAt: '2023-01-01T10:00:00Z',
             finishedAt: '2023-01-01T11:00:00Z',
-            registredById: null,
+            enrolledById: null,
         },
         {
             id: 2,
@@ -52,8 +58,8 @@ describe('Dashboard Page', () => {
             school: { name: 'School B' },
             statededAt: '2023-01-01T12:00:00Z',
             finishedAt: '2023-01-01T13:00:00Z',
-            registredById: 1,
-            registredBy: { name: 'Test User' },
+            enrolledById: 1,
+            enrolledBy: { name: 'Test User' },
         },
     ];
 
@@ -67,6 +73,7 @@ describe('Dashboard Page', () => {
         (axios.get as any).mockResolvedValue({ data: mockClasses });
         (api.get as any).mockImplementation((url: string) => {
             if (url === '/schools/1') return Promise.resolve({ data: { id: 1, name: 'School A' } });
+            if (url === '/schools') return Promise.resolve({ data: [{ id: 1, name: 'School A' }] });
             if (url === '/subjects') return Promise.resolve({ data: [{ id: 1, name: 'Math' }] });
             return Promise.resolve({ data: [] });
         });
@@ -79,7 +86,7 @@ describe('Dashboard Page', () => {
 
         await waitFor(() => {
             expect(axios.get).toHaveBeenCalledWith('/api/classes', expect.any(Object));
-            expect(api.get).toHaveBeenCalledWith('/schools/1');
+            expect(api.get).toHaveBeenCalledWith('/schools');
             expect(api.get).toHaveBeenCalledWith('/subjects');
         });
     });
@@ -88,14 +95,14 @@ describe('Dashboard Page', () => {
         render(<Home />);
 
         await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
-        expect(screen.queryByRole('cell', { name: 'Science' })).not.toBeInTheDocument(); // registredById != null is hidden in "Aulas Disponiveis"
+        expect(screen.queryByRole('cell', { name: 'Science' })).not.toBeInTheDocument(); // enrolledById != null is hidden in "Aulas Disponiveis"
 
         const myClassesButton = screen.getByText('Aulas aceitas');
         fireEvent.click(myClassesButton);
 
         await waitFor(() => {
-            expect(screen.getByText('Science')).toBeInTheDocument();
-            expect(screen.queryByText('Math')).not.toBeInTheDocument();
+            expect(screen.getByRole('cell', { name: 'Science' })).toBeInTheDocument();
+            expect(screen.queryByRole('cell', { name: 'Math' })).not.toBeInTheDocument();
         });
     });
 
@@ -119,7 +126,8 @@ describe('Dashboard Page', () => {
 
         await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
 
-        fireEvent.change(screen.getByRole('combobox'), { target: { value: '1' } });
+        const subjectSelect = screen.getAllByRole('combobox')[1]; // Second combobox is subject
+        fireEvent.change(subjectSelect, { target: { value: '1' } });
         fireEvent.change(screen.getByPlaceholderText('Inicio'), { target: { value: '2023-01-01T10:00' } });
         fireEvent.change(screen.getByPlaceholderText('Termino'), { target: { value: '2023-01-01T11:00' } });
 
@@ -137,7 +145,8 @@ describe('Dashboard Page', () => {
 
         await waitFor(() => expect(screen.getByRole('cell', { name: 'Math' })).toBeInTheDocument());
 
-        fireEvent.change(screen.getByRole('combobox'), { target: { value: '1' } });
+        const subjectSelect = screen.getAllByRole('combobox')[1];
+        fireEvent.change(subjectSelect, { target: { value: '1' } });
         fireEvent.change(screen.getByPlaceholderText('Inicio'), { target: { value: '2023-01-01T10:00' } });
         fireEvent.change(screen.getByPlaceholderText('Termino'), { target: { value: '2023-01-01T11:00' } });
 
@@ -277,7 +286,7 @@ describe('Dashboard Page', () => {
         });
         render(<Home />);
         await waitFor(() => {
-            expect(api.get).toHaveBeenCalledWith('/schools/1');
+            expect(api.get).toHaveBeenCalledWith('/schools');
             expect(api.get).toHaveBeenCalledWith('/subjects');
         });
     });

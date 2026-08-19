@@ -9,6 +9,9 @@ import api from "@/api.service";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {toast} from "react-toastify";
 import {useUserHook} from "@/user/useUserHook";
+import {EnrollmentsList} from "@/components/EnrollmentsList";
+import {SubstitutionCounter} from "@/components/SubstitutionCounter";
+import {useSubstitutionLimit} from "@/hooks/useSubstitutionLimit";
 import axios from "axios";
 
 const Wrapper = styled.div`
@@ -255,16 +258,22 @@ const validationSchema = Yup.object({
 export default function Home() {
     const [classes, setClasses] = useState([])
     const [school, setSchool] = useState<any>()
+    const [schools, setSchools] = useState<any[]>([])
+    const [selectedSchoolId, setSelectedSchoolId] = useState<number | null>(null)
     const [subjects, setSubjects] = useState<any[]>([])
     const [preSearch, setPreSearch] = useState('')
     const [search, setSerch] = useState('')
-    const [all, setAll] = useState<boolean>(true)
+    const [all, setAll] = useState<'classes' | 'myclasses' | 'enrollments'>('classes')
 
     const {register, handleSubmit, formState} = useForm({
         resolver: yupResolver(validationSchema),
     });
 
     const {user, logout, refreshUserData} = useUserHook();
+    
+    const { current, limit, percentage, canApply, loading: limitLoading } = useSubstitutionLimit(
+        user?.profileId === 3 ? user?.id : undefined,
+    );
 
     const loadClasses = useCallback(() => {
         axios.get(`/api/classes`, {
@@ -280,9 +289,10 @@ export default function Home() {
     const submit = handleSubmit(async (data) => {
             console.log(data)
             const {finishedAt, startAt, subject} = data;
+            const schoolId = user?.profileId === 1 ? selectedSchoolId : user?.schoolId;
             const payload = {
                 // @ts-ignore
-                schoolId: school?.id,
+                schoolId: schoolId,
                 subjectId: subject,
                 createdByd: user?.id,
                 statededAt: startAt,
@@ -299,29 +309,12 @@ export default function Home() {
     );
 
     const accept = (id: any)=>async () => {
-        const payload = {
-            registredById: user?.id,
-        }
         try {
-            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
-            toast.success('Aula aprovada com sucesso')
+            await api.post(`/enrollment-requests/request/${id}`);
+            toast.success('Candidatura enviada com sucesso')
             loadClasses()
         } catch (error) {
-            toast.error('Erro ao aprovar aula')
-        }
-    };
-
-    const aprove = (id: any)=>async () => {
-        const payload = {
-            approvedById: user?.id,
-        }
-        try {
-            await axios.patch(`/api/classes/${id}`, payload,{ withCredentials: true});
-            toast.success('Aula aprovada com sucesso')
-            loadClasses()
-        } catch (error) {
-            console.log({error})
-            toast.error('Erro ao aprovar aula')
+            toast.error('Erro ao enviar candidatura')
         }
     };
 
@@ -343,30 +336,54 @@ export default function Home() {
         loadClasses();
     }, [loadClasses]);
     useEffect(() => {
-        api.get('/schools/1').then((data) => {
-            setSchool(data?.data)
-        }).catch(() => {})
         api.get('/subjects').then((data) => {
             setSubjects(data?.data || [])
         }).catch(() => {})
     }, []);
 
+    useEffect(() => {
+        if (!user) return;
+        
+        if (user.profileId === 1) {
+            api.get('/schools').then((data) => {
+                setSchools(data?.data || [])
+                if (data?.data?.length > 0) {
+                    setSelectedSchoolId(data.data[0].id)
+                    setSchool(data.data[0])
+                }
+            }).catch(() => {})
+        } else if (user.profileId === 2 && user.schoolId) {
+            api.get(`/schools/${user.schoolId}`).then((data) => {
+                setSchool(data?.data)
+                setSelectedSchoolId(user.schoolId)
+            }).catch(() => {})
+        }
+    }, [user]);
+
 
     const classesFiltered = useMemo(() => {
-        if (all) {
+        if (all === 'classes') {
             // @ts-ignore
-            return classes.filter(item => item?.registredById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+            return classes.filter(item => item?.enrolledById === null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
         }
         // @ts-ignore
-        if (user?.profileId === 3) return classes.filter(item => item?.registredById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        if (user?.profileId === 3) return classes.filter(item => item?.enrolledById === user?.id).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
 
         // @ts-ignore
-        return classes.filter(item => item?.registredById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
+        return classes.filter(item => item?.enrolledById != null).filter((item) => `${item?.subject?.name} ${item?.school?.name}`.toLowerCase().includes(search.toLowerCase()));
     }, [all, classes, search, user])
     return (<>
             <Header>
                 <Logo size={60}/>
                 <div className={'profile'}>
+                    {user?.profileId === 3 && user?.schoolId && (
+                        <SubstitutionCounter 
+                            current={current} 
+                            limit={limit} 
+                            percentage={percentage}
+                            loading={limitLoading}
+                        />
+                    )}
                     <p>
                         Olá, {user?.name}
                     </p>
@@ -378,22 +395,41 @@ export default function Home() {
                     <Card>
 
                         <TabHeader>
-                            <button className={all ? 'active' : 'inactive'} onClick={() => setAll(true)}>Aulas
-                                Disponiveis
+                            <button className={all === 'classes' ? 'active' : 'inactive'} onClick={() => setAll('classes')}>Aulas Disponiveis</button>
+                            <button className={all === 'myclasses' ? 'active' : 'inactive'} onClick={() => setAll('myclasses')}>
+                                {user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'}
                             </button>
-                            <button className={!all ? 'active' : 'inactive'} onClick={() => setAll(false)}>
-                                {        // @ts-ignore
-                                    user?.profileId != 3 ? 'Aulas aceitas' : 'Minhas Aulas'
-                                }
-                            </button>
+                            {(user?.profileId == 1 || user?.profileId == 2) && (
+                                <button className={all === 'enrollments' ? 'active' : 'inactive'} onClick={() => setAll('enrollments')}>
+                                    Candidaturas
+                                </button>
+                            )}
                         </TabHeader>
                         <CardContent>
                             {        // @ts-ignore
                                 all && user?.profileId != 3 && (
                                 <>
                                     <Form onSubmit={submit}>
-                                        <input
-                                            value={school?.name ?? 'Nome da Escola'} disabled={true} type={'text'}/>
+                                        {user?.profileId === 1 ? (
+                                            <select
+                                                value={selectedSchoolId || ''}
+                                                onChange={(e) => {
+                                                    const id = parseInt(e.target.value);
+                                                    setSelectedSchoolId(id);
+                                                    const selected = schools.find(s => s.id === id);
+                                                    if (selected) setSchool(selected);
+                                                }}
+                                            >
+                                                <option value="">Selecione a Escola</option>
+                                                {schools.map((s) => (
+                                                    <option key={s.id} value={s.id}>{s.name}</option>
+                                                ))}
+                                            </select>
+                                        ) : (
+                                            <input
+                                                value={school?.name ?? 'Nome da Escola'} disabled={true} type={'text'}
+                                            />
+                                        )}
                                         <label>
                                             <select
                                                 {...register("subject")}
@@ -427,7 +463,12 @@ export default function Home() {
                                 </>
                             )}
 
+                            {all === 'enrollments' && (
+                                <EnrollmentsList schoolId={school?.id} />
+                            )}
 
+                            {all !== 'enrollments' && (
+                            <>
                             <header>
                                 <Search>
                                     <input placeholder={'Pesquisar'} value={preSearch} type={'text'}
@@ -455,18 +496,16 @@ export default function Home() {
                                             <td>{item?.school?.name}</td>
                                             <td>{format(new Date(item?.statededAt), 'dd/MM/yyyy HH:mm:ss')}</td>
                                             <td>{format(new Date(item?.finishedAt), 'dd/MM/yyyy HH:mm:ss')}</td>
-                                            {user?.profileId != 3 && (<td>{item?.registredBy?.name}</td>)}
+                                            {user?.profileId != 3 && (<td>{item?.enrolledBy?.name}</td>)}
                                             <td>
                                                 {user?.profileId == 3 ?
-                                                    (!item?.registredBy && (<button onClick={accept(item?.id)}>aceitar</button>)) :
+                                                    (!item?.enrolledBy && (<button onClick={accept(item?.id)}>aceitar</button>)) :
                                                     (
                                                         <>
                                                             {
-                                                                !item?.registredBy ? (
+                                                                !item?.enrolledBy ? (
                                                                     <button onClick={deleteData(item?.id)}>deletar</button>
-                                                                ) : (
-                                                                    !item?.approvedById && (<button onClick={aprove(item?.id)}>aprovar</button>)
-                                                                )
+                                                                ) : null
                                                             }
 
 
@@ -479,6 +518,8 @@ export default function Home() {
                                     </tbody>
                                 </table>
                             </Content>
+                            </>
+                            )}
                         </CardContent>
 
                     </Card>
